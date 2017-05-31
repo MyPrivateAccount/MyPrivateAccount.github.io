@@ -92,12 +92,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="江山小楼">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="在一个TCP套接口被设置为非阻塞之后调用connect,connect会立即返回EINPROGRESS错误,表示连接操作正在进行中,但是仍未完成;同时TCP的三路握手操作继续进行;在这之后,我们可以调用select来检查这个链接是否建立成功;非阻塞connect有三种用途:1.我们可以在三路握手的同时做一些其它的处理.connect操作要花一个往返时间完成,而且可以是在任何地方,从几个毫秒的局域网">
+<meta property="og:type" content="article">
+<meta property="og:title" content="非阻塞connect">
+<meta property="og:url" content="http://yoursite.com/2017/05/26/非阻塞connect/index.html">
 <meta property="og:site_name" content="江山小楼">
+<meta property="og:description" content="在一个TCP套接口被设置为非阻塞之后调用connect,connect会立即返回EINPROGRESS错误,表示连接操作正在进行中,但是仍未完成;同时TCP的三路握手操作继续进行;在这之后,我们可以调用select来检查这个链接是否建立成功;非阻塞connect有三种用途:1.我们可以在三路握手的同时做一些其它的处理.connect操作要花一个往返时间完成,而且可以是在任何地方,从几个毫秒的局域网">
+<meta property="og:updated_time" content="2017-05-26T09:58:27.131Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="江山小楼">
+<meta name="twitter:title" content="非阻塞connect">
+<meta name="twitter:description" content="在一个TCP套接口被设置为非阻塞之后调用connect,connect会立即返回EINPROGRESS错误,表示连接操作正在进行中,但是仍未完成;同时TCP的三路握手操作继续进行;在这之后,我们可以调用select来检查这个链接是否建立成功;非阻塞connect有三种用途:1.我们可以在三路握手的同时做一些其它的处理.connect操作要花一个往返时间完成,而且可以是在任何地方,从几个毫秒的局域网">
 
 
 
@@ -125,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/26/非阻塞connect/"/>
 
 
 
 
 
-  <title>归档 | 江山小楼</title>
+  <title>非阻塞connect | 江山小楼</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -305,251 +309,174 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 6 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/31/C语言register变量及CPU相关知识/" itemprop="url">
-              
-                <span itemprop="name">C语言register变量及CPU相关知识</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-31T14:42:52+08:00"
-              content="2017-05-31" >
-          05-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/26/TCP短连接TIME-WAIT问题解决方法大全/" itemprop="url">
-              
-                <span itemprop="name">TCP短连接TIME_WAIT问题解决方法大全</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-26T18:16:10+08:00"
-              content="2017-05-26" >
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/26/socket之send与发送缓冲区大小的关系/" itemprop="url">
-              
-                <span itemprop="name">socket之send与发送缓冲区大小的关系</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-26T18:11:00+08:00"
-              content="2017-05-26" >
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/26/非阻塞connect/" itemprop="url">
-              
-                <span itemprop="name">非阻塞connect</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-26T17:56:24+08:00"
-              content="2017-05-26" >
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/26/网络通信常见问题/" itemprop="url">
-              
-                <span itemprop="name">网络通信常见问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-26T17:44:05+08:00"
-              content="2017-05-26" >
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/20/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-20T21:37:09+08:00"
-              content="2017-05-20" >
-          05-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/非阻塞connect/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心的萝卜">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">非阻塞connect</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T17:56:24+08:00">
+                2017-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络通信/" itemprop="url" rel="index">
+                    <span itemprop="name">网络通信</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在一个TCP套接口被设置为非阻塞之后调用connect,connect会立即返回EINPROGRESS错误,表示连接操作正在进行中,但是仍未完成;同时TCP的三路握手操作继续进行;在这之后,我们可以调用select来检查这个链接是否建立成功;非阻塞connect有三种用途:<br>1.我们可以在三路握手的同时做一些其它的处理.connect操作要花一个往返时间完成,而且可以是在任何地方,从几个毫秒的局域网到几百毫秒或几秒的广域网.在这段时间内我们可能有一些其他的处理想要执行;<br>2.可以用这种技术同时建立多个连接.在Web浏览器中很普遍;<br>3.由于我们使用select来等待连接的完成,因此我们可以给select设置一个时间限制,从而缩短connect的超时时间.在大多数实现中,connect的超时时间在75秒到几分钟之间.有时候应用程序想要一个更短的超时时间,使用非阻塞connect就是一种方法;<br>非阻塞connect听起来虽然简单,但是仍然有一些细节问题要处理:<br>1.即使套接口是非阻塞的,如果连接的服务器在同一台主机上,那么在调用connect建立连接时,连接通常会立即建立成功.我们必须处理这种情况;<br>2.源自Berkeley的实现(和Posix.1g)有两条与select和非阻塞IO相关的规则:<br>  A:当连接建立成功时,套接口描述符变成可写;<br>  B:当连接出错时,套接口描述符变成既可读又可写;<br>  注意:当一个套接口出错时,它会被select调用标记为既可读又可写;</p>
+<p>非阻塞connect有这么多好处,但是处理非阻塞connect时会遇到很多可移植性问题;</p>
+<p>处理非阻塞connect的步骤:<br>第一步:创建socket,返回套接口描述符;<br>第二步:调用fcntl把套接口描述符设置成非阻塞;<br>第三步:调用connect开始建立连接;<br>第四步:判断连接是否成功建立;<br>       A:如果connect返回0,表示连接简称成功(服务器可客户端在同一台机器上时就有可能发生这种情况);<br>       B:调用select来等待连接建立成功完成;<br>         如果select返回0,则表示建立连接超时;我们返回超时错误给用户,同时关闭连接,以防止三路握手操作继续进行下去;<br>         如果select返回大于0的值,则需要检查套接口描述符是否可读或可写;如果套接口描述符可读或可写,则我们可以通过调用getsockopt来得到套接口上待处理的错误(SO_ERROR),如果连接建立成功,这个错误值将是0,如果建立连接时遇到错误,则这个值是连接错误所对应的errno值(比如:ECONNREFUSED,ETIMEDOUT等).<br>“读取套接口上的错误”是遇到的第一个可移植性问题;如果出现问题,getsockopt源自Berkeley的实现是返回0,等待处理的错误在变量errno中返回;但是Solaris会让getsockopt返回-1,errno置为待处理的错误;我们对这两种情况都要处理;</p>
+<p>这样,在处理非阻塞connect时,在不同的套接口实现的平台中存在的移植性问题,首先,有可能在调用select之前,连接就已经建立成功,而且对方的数据已经到来.在这种情况下,连接成功时套接口将既可读又可写.这和连接失败时是一样的.这个时候我们还得通过getsockopt来读取错误值;这是第二个可移植性问题;<br>移植性问题总结:<br>1.对于出错的套接口描述符,getsockopt的返回值源自Berkeley的实现是返回0,待处理的错误值存储在errno中;而源自Solaris的实现是返回0,待处理的错误存储在errno中;(套接口描述符出错时调用getsockopt的返回值不可移植)<br>2.有可能在调用select之前,连接就已经建立成功,而且对方的数据已经到来,在这种情况下,套接口描述符是既可读又可写;这与套接口描述符出错时是一样的;(怎样判断连接是否建立成功的条件不可移植)</p>
+<p>这样的话,在我们判断连接是否建立成功的条件不唯一时,我们可以有以下的方法来解决这个问题:<br>1.调用getpeername代替getsockopt.如果调用getpeername失败,getpeername返回ENOTCONN,表示连接建立失败,我们必须以SO_ERROR调用getsockopt得到套接口描述符上的待处理错误;<br>2.调用read,读取长度为0字节的数据.如果read调用失败,则表示连接建立失败,而且read返回的errno指明了连接失败的原因.如果连接建立成功,read应该返回0;<br>3.再调用一次connect.它应该失败,如果错误errno是EISCONN,就表示套接口已经建立,而且第一次连接是成功的;否则,连接就是失败的;</p>
+<p>被中断的connect:<br>如果在一个阻塞式套接口上调用connect,在TCP的三路握手操作完成之前被中断了,比如说,被捕获的信号中断,将会发生什么呢?假定connect不会自动重启,它将返回EINTR.那么,这个时候,我们就不能再调用connect等待连接建立完成了,如果再次调用connect来等待连接建立完成的话,connect将会返回错误值EADDRINUSE.在这种情况下,应该做的是调用select,就像在非阻塞式connect中所做的一样.然后,select在连接建立成功(使套接口描述符可写)或连接建立失败(使套接口描述符既可读又可写)时返回;</p>
+<p>转自：<a href="http://bdxnote.blog.163.com/blog/static/844423520098651256549/" target="_blank" rel="external">http://bdxnote.blog.163.com/blog/static/844423520098651256549/</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/26/网络通信常见问题/" rel="next" title="网络通信常见问题">
+                <i class="fa fa-chevron-left"></i> 网络通信常见问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/26/socket之send与发送缓冲区大小的关系/" rel="prev" title="socket之send与发送缓冲区大小的关系">
+                socket之send与发送缓冲区大小的关系 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -557,6 +484,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -815,11 +746,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   

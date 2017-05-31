@@ -92,12 +92,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="江山小楼">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="在C/C++网络编程中不免会遇到需要传输大数据、大文件的情况，而由于socket本身缓冲区的限制，大概一次只能发送4K左右的数据，所以在传输大数据时客户端就需要进行分包，在目的地重新组包。而实际上已有一些消息/通讯中间件对此进行了封装，提供了直接发送大数据/文件的接口；除此之外，利用共享目录，ftp，ssh等系统命令来实现大文件/数据也不失为一种好的方法。基础的基于socket进行传输关键在于控制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="socket之send与发送缓冲区大小的关系">
+<meta property="og:url" content="http://yoursite.com/2017/05/26/socket之send与发送缓冲区大小的关系/index.html">
 <meta property="og:site_name" content="江山小楼">
+<meta property="og:description" content="在C/C++网络编程中不免会遇到需要传输大数据、大文件的情况，而由于socket本身缓冲区的限制，大概一次只能发送4K左右的数据，所以在传输大数据时客户端就需要进行分包，在目的地重新组包。而实际上已有一些消息/通讯中间件对此进行了封装，提供了直接发送大数据/文件的接口；除此之外，利用共享目录，ftp，ssh等系统命令来实现大文件/数据也不失为一种好的方法。基础的基于socket进行传输关键在于控制">
+<meta property="og:updated_time" content="2017-05-26T10:29:09.486Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="江山小楼">
+<meta name="twitter:title" content="socket之send与发送缓冲区大小的关系">
+<meta name="twitter:description" content="在C/C++网络编程中不免会遇到需要传输大数据、大文件的情况，而由于socket本身缓冲区的限制，大概一次只能发送4K左右的数据，所以在传输大数据时客户端就需要进行分包，在目的地重新组包。而实际上已有一些消息/通讯中间件对此进行了封装，提供了直接发送大数据/文件的接口；除此之外，利用共享目录，ftp，ssh等系统命令来实现大文件/数据也不失为一种好的方法。基础的基于socket进行传输关键在于控制">
 
 
 
@@ -125,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/26/socket之send与发送缓冲区大小的关系/"/>
 
 
 
 
 
-  <title>归档 | 江山小楼</title>
+  <title>socket之send与发送缓冲区大小的关系 | 江山小楼</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +161,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -305,251 +309,169 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 6 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/31/C语言register变量及CPU相关知识/" itemprop="url">
-              
-                <span itemprop="name">C语言register变量及CPU相关知识</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-31T14:42:52+08:00"
-              content="2017-05-31" >
-          05-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/26/TCP短连接TIME-WAIT问题解决方法大全/" itemprop="url">
-              
-                <span itemprop="name">TCP短连接TIME_WAIT问题解决方法大全</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-26T18:16:10+08:00"
-              content="2017-05-26" >
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/26/socket之send与发送缓冲区大小的关系/" itemprop="url">
-              
-                <span itemprop="name">socket之send与发送缓冲区大小的关系</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-26T18:11:00+08:00"
-              content="2017-05-26" >
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/26/非阻塞connect/" itemprop="url">
-              
-                <span itemprop="name">非阻塞connect</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-26T17:56:24+08:00"
-              content="2017-05-26" >
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/26/网络通信常见问题/" itemprop="url">
-              
-                <span itemprop="name">网络通信常见问题</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-26T17:44:05+08:00"
-              content="2017-05-26" >
-          05-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/20/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-20T21:37:09+08:00"
-              content="2017-05-20" >
-          05-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/socket之send与发送缓冲区大小的关系/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="开心的萝卜">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">socket之send与发送缓冲区大小的关系</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T18:11:00+08:00">
+                2017-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/网络通信/" itemprop="url" rel="index">
+                    <span itemprop="name">网络通信</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在C/C++网络编程中不免会遇到需要传输大数据、大文件的情况，而由于socket本身缓冲区的限制，大概一次只能发送4K左右的数据，所以在传输大数据时客户端就需要进行分包，在目的地重新组包。而实际上已有一些消息/通讯中间件对此进行了封装，提供了直接发送大数据/文件的接口；除此之外，利用共享目录，ftp，ssh等系统命令来实现大文件/数据也不失为一种好的方法。<br>基础的基于socket进行传输关键在于控制，需要自己行分包和组包。<br>send函数在发送的数据长度大于发送缓冲区大小，或者大于发送缓冲区剩余大小时分次发送<br>当send的数据长度大于socket的缓冲区长度时，不管是windows还是linux,send都会分帧发送。</p>
+<p>具体内容见:<a href="http://www.360doc.com/content/13/0913/15/13047933_314202256.shtml" target="_blank" rel="external">http://www.360doc.com/content/13/0913/15/13047933_314202256.shtml</a><br>           <a href="http://www.2cto.com/kf/201401/273290.html" target="_blank" rel="external">http://www.2cto.com/kf/201401/273290.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/26/非阻塞connect/" rel="next" title="非阻塞connect">
+                <i class="fa fa-chevron-left"></i> 非阻塞connect
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/26/TCP短连接TIME-WAIT问题解决方法大全/" rel="prev" title="TCP短连接TIME_WAIT问题解决方法大全">
+                TCP短连接TIME_WAIT问题解决方法大全 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -557,6 +479,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -815,11 +741,9 @@
   
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
