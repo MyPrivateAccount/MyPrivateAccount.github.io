@@ -100,7 +100,7 @@
 <meta property="og:description" content="一般情况下，变量的值是存储在内存中的，CPU 每次使用数据都要从内存中读取。如果有一些变量使用非常频繁，从内存中读取就会消耗很多时间，例如 for 循环中的增量控制：int i;for(i=0; i&amp;lt;1000; i++){    // Some Code}执行这段代码，CPU 为了获得 i，会读取 1000 次内存。 为了解决这个问题，可以将使用频繁的变量放在CPU的通用寄存器中，这样使用该">
 <meta property="og:image" content="http://yoursite.com/2017/05/31/C语言register变量及CPU相关知识/cpu_cachc.png">
 <meta property="og:image" content="http://yoursite.com/2017/05/31/C语言register变量及CPU相关知识/pi值公式.gif">
-<meta property="og:updated_time" content="2017-05-31T06:54:25.465Z">
+<meta property="og:updated_time" content="2017-05-31T09:12:10.824Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言register变量及CPU相关知识">
 <meta name="twitter:description" content="一般情况下，变量的值是存储在内存中的，CPU 每次使用数据都要从内存中读取。如果有一些变量使用非常频繁，从内存中读取就会消耗很多时间，例如 for 循环中的增量控制：int i;for(i=0; i&amp;lt;1000; i++){    // Some Code}执行这段代码，CPU 为了获得 i，会读取 1000 次内存。 为了解决这个问题，可以将使用频繁的变量放在CPU的通用寄存器中，这样使用该">
@@ -409,7 +409,7 @@
 
       
         <p>一般情况下，变量的值是存储在内存中的，CPU 每次使用数据都要从内存中读取。如果有一些变量使用非常频繁，从内存中读取就会消耗很多时间，例如 for 循环中的增量控制：<br>int i;<br>for(i=0; i&lt;1000; i++){<br>    // Some Code<br>}<br>执行这段代码，CPU 为了获得 i，会读取 1000 次内存。</p>
-<p>为了解决这个问题，可以将使用频繁的变量放在CPU的通用寄存器中，这样使用该变量时就不必访问内存，直接从寄存器中读取，大大提高程序的运行效率。<br>寄存器、缓存、内存</p>
+<p>为了解决这个问题，可以将使用频繁的变量放在CPU的通用寄存器中，这样使用该变量时就不必访问内存，直接从寄存器中读取，大大提高程序的运行效率。<br><a id="more"></a><br>寄存器、缓存、内存</p>
 <p>为了加深对 register 变量的理解，这里有必要讲一下CPU寄存器。</p>
 <p>按照与CPU的远近来分，离CPU最近的是寄存器，然后是缓存，最后是内存。</p>
 <p>寄存器是最贴近CPU的，而且CPU只在寄存器中进行存取。寄存的意思是暂时存放数据，不用每次都从内存中取，它是一个临时的存放数据的空间。</p>
@@ -490,6 +490,10 @@ return 0;
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/05/31/hexo-git-backup/" rel="prev" title="hexo-git-backup">
+                hexo-git-backup <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -551,7 +555,7 @@ return 0;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -562,7 +566,7 @@ return 0;
             
             <div class="site-state-item site-state-categories">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

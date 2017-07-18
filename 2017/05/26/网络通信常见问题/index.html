@@ -98,7 +98,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/26/网络通信常见问题/index.html">
 <meta property="og:site_name" content="江山小楼">
 <meta property="og:description" content="一、socket流程socket 是面向客户/服务器模型而设计的， 针对客户和服务器程序提供不同的socket 系统调用 二、长连接和短连接长连接：在多次请求中保持连接，使用同一个连接处理多次请求，直至出现错误或者异常才断开，并重新建立新的连接。一般通过服务器端的长时间的读超时和客户端重用连接来实现。典型例子：ui-&amp;gt;as  as-&amp;gt;bs短连接：每个请求建立一个连接，请求处理完成，则断">
-<meta property="og:updated_time" content="2017-05-27T03:32:04.161Z">
+<meta property="og:updated_time" content="2017-06-01T04:53:31.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络通信常见问题">
 <meta name="twitter:description" content="一、socket流程socket 是面向客户/服务器模型而设计的， 针对客户和服务器程序提供不同的socket 系统调用 二、长连接和短连接长连接：在多次请求中保持连接，使用同一个连接处理多次请求，直至出现错误或者异常才断开，并重新建立新的连接。一般通过服务器端的长时间的读超时和客户端重用连接来实现。典型例子：ui-&amp;gt;as  as-&amp;gt;bs短连接：每个请求建立一个连接，请求处理完成，则断">
@@ -417,7 +417,8 @@
 <h3 id="7-网络字节序转换"><a href="#7-网络字节序转换" class="headerlink" title="7.网络字节序转换"></a>7.网络字节序转换</h3><p>big-endian和little-endian<br>相关函数：<br>htonl、htons、ntohl、ntohs<br>保证程序兼容性和可移植性 </p>
 <h3 id="8-select中的bug"><a href="#8-select中的bug" class="headerlink" title="8.select中的bug"></a>8.select中的bug</h3><p>不能操作多于1024个的socket<br>FD_SETSIZE在内核中定义为1024，并使用其声明最大的描述字集大小<br>解决方法：<br>调整程序，使其所需socket少于1024<br>使用poll()来代替select() </p>
 <h3 id="9-带超时的select"><a href="#9-带超时的select" class="headerlink" title="9.带超时的select"></a>9.带超时的select</h3><p>将要读的套接字加入rset中<br>调用select()。如果返回0则超时，返回-1则出错，否则利用FD_ISSET宏检查rset中的该套接字是否置位，如果是，则该套接字有数据可读，调用read()来读取<br>写超时控制和读超时控制的操作类似，但设置的是wret </p>
-<h3 id="10-带超时的Connect"><a href="#10-带超时的Connect" class="headerlink" title="10.带超时的Connect"></a>10.带超时的Connect</h3><p>设置套接字为非阻塞：<br>flags=fcntl(sockfd,F_GETFL,0);<br>fcntl(sockfd,F_SETFL,flags|O_NONBLOCK);<br>调用connect()。如果返回成功则连接已经建立。不成功则检查errno，如果errno为EINPROGRESS，表示连接正在试图建立中。其他错误则应返回出错。<br>将套接字加入rset和wset，调用select()。返回0则表示超时。<br>如果select()返回成功，则检查sockfd的状态，仅可写则为连接建立成功，可读且可写表示出错。<br>恢复套接字的原有状态：<br>fcntl(sockfd,F_SETFL,flags);<br>11.调用被信号中断<br>大多数的阻塞系统调用都可能被信号中断<br>read()、write()、accept()、select()、connect()……<br>恢复被中断的系统调用<br>设置信号标志为SA_RESTART（并不是所有系统都支持；并不是所有系统调用都支持）<br>判断errno为EINTR，则再次调用函数（推荐）<br>read()、write()、select()、accept()可以重新调用一次：<br>do {<br>     result = read(sockfd,buf,len);<br>}while ((result == -1) &amp;&amp; (errno == EINTR));<br>connect()被中断不能重新调用，只能使用select()来等待连接完成。</p>
+<h3 id="10-带超时的Connect"><a href="#10-带超时的Connect" class="headerlink" title="10.带超时的Connect"></a>10.带超时的Connect</h3><p>设置套接字为非阻塞：<br>flags=fcntl(sockfd,F_GETFL,0);<br>fcntl(sockfd,F_SETFL,flags|O_NONBLOCK);<br>调用connect()。如果返回成功则连接已经建立。不成功则检查errno，如果errno为EINPROGRESS，表示连接正在试图建立中。其他错误则应返回出错。<br>将套接字加入rset和wset，调用select()。返回0则表示超时。<br>如果select()返回成功，则检查sockfd的状态，仅可写则为连接建立成功，可读且可写表示出错。<br>恢复套接字的原有状态：<br>fcntl(sockfd,F_SETFL,flags); </p>
+<h3 id="11-调用被信号中断"><a href="#11-调用被信号中断" class="headerlink" title="11.调用被信号中断"></a>11.调用被信号中断</h3><p>大多数的阻塞系统调用都可能被信号中断<br>read()、write()、accept()、select()、connect()……<br>恢复被中断的系统调用<br>设置信号标志为SA_RESTART（并不是所有系统都支持；并不是所有系统调用都支持）<br>判断errno为EINTR，则再次调用函数（推荐）<br>read()、write()、select()、accept()可以重新调用一次：<br>do {<br>     result = read(sockfd,buf,len);<br>}while ((result == -1) &amp;&amp; (errno == EINTR));<br>connect()被中断不能重新调用，只能使用select()来等待连接完成。</p>
 <p>转自：<a href="http://blog.csdn.net/wzhwho/article/details/6169620" target="_blank" rel="external">http://blog.csdn.net/wzhwho/article/details/6169620</a></p>
 
       
@@ -539,7 +540,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -550,7 +551,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -659,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、socket流程"><span class="nav-text">一、socket流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、长连接和短连接"><span class="nav-text">二、长连接和短连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、常见问题"><span class="nav-text">三、常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-socket不够"><span class="nav-text">1.socket不够</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-长连接请求混乱"><span class="nav-text">2.长连接请求混乱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-SIGPIPE信号"><span class="nav-text">3.SIGPIPE信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-TCP-NODELAY"><span class="nav-text">4.TCP_NODELAY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-SO-REUSEADDR"><span class="nav-text">5.SO_REUSEADDR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-一次读写不完全"><span class="nav-text">6.一次读写不完全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-网络字节序转换"><span class="nav-text">7.网络字节序转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-select中的bug"><span class="nav-text">8.select中的bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-带超时的select"><span class="nav-text">9.带超时的select</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-带超时的Connect"><span class="nav-text">10.带超时的Connect</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、socket流程"><span class="nav-text">一、socket流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、长连接和短连接"><span class="nav-text">二、长连接和短连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、常见问题"><span class="nav-text">三、常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-socket不够"><span class="nav-text">1.socket不够</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-长连接请求混乱"><span class="nav-text">2.长连接请求混乱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-SIGPIPE信号"><span class="nav-text">3.SIGPIPE信号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-TCP-NODELAY"><span class="nav-text">4.TCP_NODELAY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-SO-REUSEADDR"><span class="nav-text">5.SO_REUSEADDR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-一次读写不完全"><span class="nav-text">6.一次读写不完全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-网络字节序转换"><span class="nav-text">7.网络字节序转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-select中的bug"><span class="nav-text">8.select中的bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-带超时的select"><span class="nav-text">9.带超时的select</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-带超时的Connect"><span class="nav-text">10.带超时的Connect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-调用被信号中断"><span class="nav-text">11.调用被信号中断</span></a></li></ol></li></ol></div>
             
 
           </div>
