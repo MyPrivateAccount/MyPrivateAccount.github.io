@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-06-01T07:50:01.050Z</updated>
+  <updated>2017-07-18T04:24:55.307Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信开发nodeJs</title>
+    <link href="http://yoursite.com/2017/07/18/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91nodeJs/"/>
+    <id>http://yoursite.com/2017/07/18/微信开发nodeJs/</id>
+    <published>2017-07-18T03:44:05.000Z</published>
+    <updated>2017-07-18T04:24:55.307Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://segmentfault.com/a/1190000005856154" target="_blank" rel="external">https://segmentfault.com/a/1190000005856154</a> nodejs微信开发—接入指南<br><a href="https://github.com/xiadd/shorthand" target="_blank" rel="external">https://github.com/xiadd/shorthand</a> 微信开发群群主源码</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000005856154&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://segmentfault.com/a/1190000005856154&lt;/a&gt; node
+    
+    </summary>
+    
+      <category term="微信开发" scheme="http://yoursite.com/categories/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/"/>
+    
+    
+      <category term="nodeJs" scheme="http://yoursite.com/tags/nodeJs/"/>
+    
+  </entry>
   
   <entry>
     <title>字符编码笔记：ASCII，Unicode和UTF-8</title>
