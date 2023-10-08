@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>江山小楼</title>
+  
+  
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-05-31T09:26:54.553Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>开心的萝卜</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo显示阅读全文</title>
+    <link href="http://yoursite.com/2017/05/31/hexo%E6%98%BE%E7%A4%BA%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/"/>
+    <id>http://yoursite.com/2017/05/31/hexo%E6%98%BE%E7%A4%BA%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/</id>
+    <published>2017-05-31T09:14:06.000Z</published>
+    <updated>2017-05-31T09:26:54.553Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近使用Hexo搭建了自己的博客，并且使用了简洁但是强大的NexT主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接阅读全文来进入文章的详情页。效果请看 <a href="https://violinlin.github.io/">我的小窝</a></p><span id="more"></span><p>1.在文章中使用”<!--more-->“ 手动进行截断<br>这种方法可以根据文章的内容，自己在合适的位置添加”<!--more-->“标签，使用灵活，也是Hexo推荐的方法。<br><img src="/2017/05/31/hexo%E6%98%BE%E7%A4%BA%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/1.png" alt="方法1"></p><p>2.在文章中的front-matter中添加description，并提供文章摘录<br>这种方式只会在首页列表中显示文章的摘要内容，进入文章详情后不会再显示。</p><p><img src="/2017/05/31/hexo%E6%98%BE%E7%A4%BA%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/2.png" alt="方法2"><br>3.自动形成摘要，在主题配置文件中添加<br>默认截取的长度为 150 字符，可以根据需要自行设定</p><p>auto_excerpt:<br>  enable: true<br>  length: 150<br>建议使用 “<!-- more -->“（即第一种方式），除了可以精确控制需要显示的摘录内容以外， 这种方式也可以让 Hexo 中的插件更好的识别。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;最近使用Hexo搭建了自己的博客，并且使用了简洁但是强大的NexT主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接阅读全文来进入文章的详情页。效果请看 &lt;a href=&quot;https://violinlin.github.io/&quot;&gt;我的小窝&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="hexo博客搭建" scheme="http://yoursite.com/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>hexo-git-backup</title>
+    <link href="http://yoursite.com/2017/05/31/hexo-git-backup/"/>
+    <id>http://yoursite.com/2017/05/31/hexo-git-backup/</id>
+    <published>2017-05-31T08:02:20.000Z</published>
+    <updated>2017-05-31T08:04:33.861Z</updated>
+    
+    <content type="html"><![CDATA[<p>git-backup</p><p>git-backup.</p><p>##Install if your hexo version is 2.x.x, you should install as follow:</p><p>$ npm install <a href="mailto:&#x68;&#x65;&#120;&#x6f;&#x2d;&#x67;&#x69;&#x74;&#45;&#x62;&#x61;&#x63;&#x6b;&#x75;&#112;&#64;&#48;&#x2e;&#x30;&#46;&#57;&#x31;">&#x68;&#x65;&#120;&#x6f;&#x2d;&#x67;&#x69;&#x74;&#45;&#x62;&#x61;&#x63;&#x6b;&#x75;&#112;&#64;&#48;&#x2e;&#x30;&#46;&#57;&#x31;</a> –save<br>if version is 3.x.x, you should install as follow:</p><p>$ npm install hexo-git-backup –save<br>Update</p><p>if you install with –save, you must remove firstly when you update it.</p><p>$ npm remove hexo-git-backup<br>$ npm install hexo-git-backup –save<br>Configure</p><p>You should configure this plugin in _config.yml.</p><p>backup:<br>    type: git<br>    repository:<br>       github: <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#x74;&#x40;&#103;&#x69;&#116;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#x6d;</a>:xxx&#x2F;xxx.git,branchName<br>       gitcafe: <a href="mailto:&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#109;">&#x67;&#x69;&#116;&#x40;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#99;&#x6f;&#109;</a>:xxx&#x2F;xxx.git,branchName<br>Using</p><p>hexo backup<br>or</p><p>hexo b<br>Options</p><p>if you want to back up with your theme,just add theme: your theme name,your theme name in _config.yml.</p><p>backup:<br>    type: git<br>    theme: coney,landscape,xxx<br>    repository:<br>       github: <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#103;&#x69;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>:xxx&#x2F;xxx.git,branchName<br>       gitcafe: <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#117;&#98;&#46;&#x63;&#111;&#109;</a>:xxx&#x2F;xxx.git,branchName<br>Attention: if you do as above, the dir themes&#x2F;coney&#x2F;.gitwill be removed</p><p>if you want DIY commit message, just add ‘message: update xxx’.</p><p>backup:<br>    type: git<br>    message: update xxx<br>    repository:<br>       github: <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>:xxx&#x2F;xxx.git,branchName<br>       gitcafe: <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#104;&#117;&#x62;&#46;&#x63;&#111;&#x6d;</a>:xxx&#x2F;xxx.git,branchName<br>Now you can backup all the blog!</p><p>Problems</p><p>You may get some troubles by your computer’ permission。</p><p>###Error: EISDIR, open it is caused by permission. just do ‘sudo hexo b’</p><p>sudo hexo b</p><p>转自:<a href="https://github.com/coneycode/hexo-git-backup">https://github.com/coneycode/hexo-git-backup</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;git-backup&lt;/p&gt;
+&lt;p&gt;git-backup.&lt;/p&gt;
+&lt;p&gt;##Install if your hexo version is 2.x.x, you should install as follow:&lt;/p&gt;
+&lt;p&gt;$ npm install &lt;a href=</summary>
+      
+    
+    
+    
+    <category term="hexo博客搭建" scheme="http://yoursite.com/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>C语言register变量及CPU相关知识</title>
+    <link href="http://yoursite.com/2017/05/31/C%E8%AF%AD%E8%A8%80register%E5%8F%98%E9%87%8F%E5%8F%8ACPU%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/"/>
+    <id>http://yoursite.com/2017/05/31/C%E8%AF%AD%E8%A8%80register%E5%8F%98%E9%87%8F%E5%8F%8ACPU%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/</id>
+    <published>2017-05-31T06:42:52.000Z</published>
+    <updated>2017-05-31T09:12:10.824Z</updated>
+    
+    <content type="html"><![CDATA[<p>一般情况下，变量的值是存储在内存中的，CPU 每次使用数据都要从内存中读取。如果有一些变量使用非常频繁，从内存中读取就会消耗很多时间，例如 for 循环中的增量控制：<br>int i;<br>for(i&#x3D;0; i&lt;1000; i++){<br>    &#x2F;&#x2F; Some Code<br>}<br>执行这段代码，CPU 为了获得 i，会读取 1000 次内存。</p><p>为了解决这个问题，可以将使用频繁的变量放在CPU的通用寄存器中，这样使用该变量时就不必访问内存，直接从寄存器中读取，大大提高程序的运行效率。</p><span id="more"></span><p>寄存器、缓存、内存</p><p>为了加深对 register 变量的理解，这里有必要讲一下CPU寄存器。</p><p>按照与CPU的远近来分，离CPU最近的是寄存器，然后是缓存，最后是内存。</p><p>寄存器是最贴近CPU的，而且CPU只在寄存器中进行存取。寄存的意思是暂时存放数据，不用每次都从内存中取，它是一个临时的存放数据的空间。</p><p>而寄存器的数据又来源于内存，于是 CPU &lt;– 寄存器 &lt;– 内存，这就是它们之间的信息交换。</p><p>那么为什么还需要缓存呢？因为如果频繁地操作内存中同一地址上的数据会影响速度，于是就在寄存器和内存之间设置一个缓存，把使用频繁的数据暂时保存到缓存，如果寄存器需要读取内存中同一地址上的数据，就不用大老远地再去访问内存，直接从缓存中读取即可。</p><p>缓存的速度远高于内存，价格也是如此。</p><p>注意：缓存的容量是有限的，寄存器只能从缓存中读取到部分数据，对于使用不是很频繁的数据，会绕过缓存，直接到内存中读取。所以不是每次都能从缓存中得到数据，这就是缓存的命中率，能够从缓存中读取就命中，否则就没命中。</p><p>关于缓存的命中率又是一门学问，哪些数据保留在缓存，哪些数据不保留，都有复杂的算法。</p><p><img src="/2017/05/31/C%E8%AF%AD%E8%A8%80register%E5%8F%98%E9%87%8F%E5%8F%8ACPU%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/cpu_cachc.png" alt="cpu_cachc"></p><p>注意：上面所说的CPU是指CPU核心，从市场上购买的CPU已是封装好的套件，附带了寄存器和缓存，插到主板上就可以用。</p><p>从经济和速度的综合考虑，缓存又被分为一级缓存、二级缓存和三级缓存，它们的存取速度和价格依次降低，容量依次增加。购买到的CPU一般会标出三级缓存的容量。<br>register 变量</p><p>寄存器的数量是有限的，通常是把使用最频繁的变量定义为 register 的。</p><p>来看一个计算 π 的近似值的例子，求解的一个近似公式如下：<br><img src="/2017/05/31/C%E8%AF%AD%E8%A8%80register%E5%8F%98%E9%87%8F%E5%8F%8ACPU%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/pi%E5%80%BC%E5%85%AC%E5%BC%8F.gif" alt="pi值公式"></p><p>为了提高精度，循环的次数越多越好，可以将循环的增量控制定义为寄存器变量，如下所示：<br>#include &lt;stdio.h&gt;<br>#include &lt;conio.h&gt;</p><p>int main()<br>{<br>    register int i &#x3D; 0;  &#x2F;&#x2F; 寄存器变量<br>    double sign &#x3D; 1.0, res &#x3D; 0, ad &#x3D; 1.0;</p><pre><code>for(i=1; i&lt;=100000000; i++)&#123;    res += ad;    sign=-sign;    ad=sign/(2*i+1);&#125;res *= 4;printf(&quot;pi is %f&quot;, res);getch();return 0;</code></pre><p>}<br>运行结果：<br>pi is 3.141593</p><p>关于寄存器变量有以下事项需要注意：</p><ol><li><p>为寄存器变量分配寄存器是动态完成的，因此，只有局部变量和形式参数才能定义为寄存器变量。</p></li><li><p>局部静态变量不能定义为寄存器变量，因为一个变量只能声明为一种存储类别。</p></li><li><p>寄存器的长度一般和机器的字长一致，所以，只有较短的类型如int、char、short等才适合定义为寄存器变量，诸如double等较大的类型，不推荐将其定义为寄存器类型。</p></li><li><p>CPU的寄存器数目有限，因此，即使定义了寄存器变量，编译器可能并不真正为其分配寄存器，而是将其当做普通的auto变量来对待，为其分配栈内存。当然，有些优秀的编译器，能自动识别使用频繁的变量，如循环控制变量等，在有可用的寄存器时，即使没有使用 register 关键字，也自动为其分配寄存器，无须由程序员来指定。</p></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;一般情况下，变量的值是存储在内存中的，CPU 每次使用数据都要从内存中读取。如果有一些变量使用非常频繁，从内存中读取就会消耗很多时间，例如 for 循环中的增量控制：&lt;br&gt;int i;&lt;br&gt;for(i&amp;#x3D;0; i&amp;lt;1000; i++){&lt;br&gt;    &amp;#x2F;&amp;#x2F; Some Code&lt;br&gt;}&lt;br&gt;执行这段代码，CPU 为了获得 i，会读取 1000 次内存。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题，可以将使用频繁的变量放在CPU的通用寄存器中，这样使用该变量时就不必访问内存，直接从寄存器中读取，大大提高程序的运行效率。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="C语言" scheme="http://yoursite.com/categories/C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>TCP短连接TIME_WAIT问题解决方法大全</title>
+    <link href="http://yoursite.com/2017/05/26/TCP%E7%9F%AD%E8%BF%9E%E6%8E%A5TIME-WAIT%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E5%A4%A7%E5%85%A8/"/>
+    <id>http://yoursite.com/2017/05/26/TCP%E7%9F%AD%E8%BF%9E%E6%8E%A5TIME-WAIT%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E5%A4%A7%E5%85%A8/</id>
+    <published>2017-05-26T10:16:10.000Z</published>
+    <updated>2017-05-26T10:17:59.186Z</updated>
+    
+    <content type="html"><![CDATA[<p>tcp连接是网络编程中最基础的概念，基于不同的使用场景，我们一般区分为“长连接”和“短连接”，<br>长短连接的优点和缺点这里就不详细展开了，有心的同学直接去google查询，本文主要关注如何解决tcp短连接的TIME_WAIT问题。</p><p>短连接最大的优点是方便，特别是脚本语言，由于执行完毕后脚本语言的进程就结束了，基本上都是用短连接。<br>但短连接最大的缺点是将占用大量的系统资源，例如：本地端口、socket句柄。<br>导致这个问题的原因其实很简单：tcp协议层并没有长短连接的概念，因此不管长连接还是短连接，连接建立-&gt;数据传输-&gt;连接关闭的流程和处理都是一样的。</p><p>正常的TCP客户端连接在关闭后，会进入一个TIME_WAIT的状态，持续的时间一般在1<del>4分钟，对于连接数不高的场景，1</del>4分钟其实并不长，对系统也不会有什么影响，<br>但如果短时间内（例如1s内）进行大量的短连接，则可能出现这样一种情况：客户端所在的操作系统的socket端口和句柄被用尽，系统无法再发起新的连接！</p><p>举例来说：假设每秒建立了1000个短连接（Web场景下是很常见的，例如每个请求都去访问memcached），假设TIME_WAIT的时间是1分钟，则1分钟内需要建立6W个短连接，<br>由于TIME_WAIT时间是1分钟，这些短连接1分钟内都处于TIME_WAIT状态，都不会释放，而Linux默认的本地端口范围配置是：net.ipv4.ip_local_port_range &#x3D; 32768    61000<br>不到3W，因此这种情况下新的请求由于没有本地端口就不能建立了。</p><p>可以通过如下方式来解决这个问题：<br>1）可以改为长连接，但代价较大，长连接太多会导致服务器性能问题，而且PHP等脚本语言，需要通过proxy之类的软件才能实现长连接；<br>2）修改ipv4.ip_local_port_range，增大可用端口范围，但只能缓解问题，不能根本解决问题；<br>3）客户端程序中设置socket的SO_LINGER选项；<br>4）客户端机器打开tcp_tw_recycle和tcp_timestamps选项；<br>5）客户端机器打开tcp_tw_reuse和tcp_timestamps选项；<br>6）客户端机器设置tcp_max_tw_buckets为一个很小的值；</p><p>在解决php连接Memcached的短连接问题过程中，我们主要验证了3）4）5）6）几种方法，采取的是基本功能验证和代码验证，并没有进行性能压力测试验证，<br>因此实际应用的时候需要注意观察业务运行情况，发现丢包、断连、无法连接等现象时，需要关注是否是因为这些选项导致的。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;tcp连接是网络编程中最基础的概念，基于不同的使用场景，我们一般区分为“长连接”和“短连接”，&lt;br&gt;长短连接的优点和缺点这里就不详细展开了，有心的同学直接去google查询，本文主要关注如何解决tcp短连接的TIME_WAIT问题。&lt;/p&gt;
+&lt;p&gt;短连接最大的优点是方便，</summary>
+      
+    
+    
+    
+    <category term="网络通信" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>socket之send与发送缓冲区大小的关系</title>
+    <link href="http://yoursite.com/2017/05/26/socket%E4%B9%8Bsend%E4%B8%8E%E5%8F%91%E9%80%81%E7%BC%93%E5%86%B2%E5%8C%BA%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%85%B3%E7%B3%BB/"/>
+    <id>http://yoursite.com/2017/05/26/socket%E4%B9%8Bsend%E4%B8%8E%E5%8F%91%E9%80%81%E7%BC%93%E5%86%B2%E5%8C%BA%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%85%B3%E7%B3%BB/</id>
+    <published>2017-05-26T10:11:00.000Z</published>
+    <updated>2017-05-26T10:29:09.487Z</updated>
+    
+    <content type="html"><![CDATA[<p>在C&#x2F;C++网络编程中不免会遇到需要传输大数据、大文件的情况，而由于socket本身缓冲区的限制，大概一次只能发送4K左右的数据，所以在传输大数据时客户端就需要进行分包，在目的地重新组包。而实际上已有一些消息&#x2F;通讯中间件对此进行了封装，提供了直接发送大数据&#x2F;文件的接口；除此之外，利用共享目录，ftp，ssh等系统命令来实现大文件&#x2F;数据也不失为一种好的方法。<br>基础的基于socket进行传输关键在于控制，需要自己行分包和组包。<br>send函数在发送的数据长度大于发送缓冲区大小，或者大于发送缓冲区剩余大小时分次发送<br>当send的数据长度大于socket的缓冲区长度时，不管是windows还是linux,send都会分帧发送。</p><p>具体内容见:<a href="http://www.360doc.com/content/13/0913/15/13047933_314202256.shtml">http://www.360doc.com/content/13/0913/15/13047933_314202256.shtml</a><br>           <a href="http://www.2cto.com/kf/201401/273290.html">http://www.2cto.com/kf/201401/273290.html</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在C&amp;#x2F;C++网络编程中不免会遇到需要传输大数据、大文件的情况，而由于socket本身缓冲区的限制，大概一次只能发送4K左右的数据，所以在传输大数据时客户端就需要进行分包，在目的地重新组包。而实际上已有一些消息&amp;#x2F;通讯中间件对此进行了封装，提供了直接发送大数</summary>
+      
+    
+    
+    
+    <category term="网络通信" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>非阻塞connect</title>
+    <link href="http://yoursite.com/2017/05/26/%E9%9D%9E%E9%98%BB%E5%A1%9Econnect/"/>
+    <id>http://yoursite.com/2017/05/26/%E9%9D%9E%E9%98%BB%E5%A1%9Econnect/</id>
+    <published>2017-05-26T09:56:24.000Z</published>
+    <updated>2017-05-26T09:58:27.131Z</updated>
+    
+    <content type="html"><![CDATA[<p>在一个TCP套接口被设置为非阻塞之后调用connect,connect会立即返回EINPROGRESS错误,表示连接操作正在进行中,但是仍未完成;同时TCP的三路握手操作继续进行;在这之后,我们可以调用select来检查这个链接是否建立成功;非阻塞connect有三种用途:<br>1.我们可以在三路握手的同时做一些其它的处理.connect操作要花一个往返时间完成,而且可以是在任何地方,从几个毫秒的局域网到几百毫秒或几秒的广域网.在这段时间内我们可能有一些其他的处理想要执行;<br>2.可以用这种技术同时建立多个连接.在Web浏览器中很普遍;<br>3.由于我们使用select来等待连接的完成,因此我们可以给select设置一个时间限制,从而缩短connect的超时时间.在大多数实现中,connect的超时时间在75秒到几分钟之间.有时候应用程序想要一个更短的超时时间,使用非阻塞connect就是一种方法;<br>非阻塞connect听起来虽然简单,但是仍然有一些细节问题要处理:<br>1.即使套接口是非阻塞的,如果连接的服务器在同一台主机上,那么在调用connect建立连接时,连接通常会立即建立成功.我们必须处理这种情况;<br>2.源自Berkeley的实现(和Posix.1g)有两条与select和非阻塞IO相关的规则:<br>  A:当连接建立成功时,套接口描述符变成可写;<br>  B:当连接出错时,套接口描述符变成既可读又可写;<br>  注意:当一个套接口出错时,它会被select调用标记为既可读又可写;</p><p>非阻塞connect有这么多好处,但是处理非阻塞connect时会遇到很多可移植性问题;</p><p>处理非阻塞connect的步骤:<br>第一步:创建socket,返回套接口描述符;<br>第二步:调用fcntl把套接口描述符设置成非阻塞;<br>第三步:调用connect开始建立连接;<br>第四步:判断连接是否成功建立;<br>       A:如果connect返回0,表示连接简称成功(服务器可客户端在同一台机器上时就有可能发生这种情况);<br>       B:调用select来等待连接建立成功完成;<br>         如果select返回0,则表示建立连接超时;我们返回超时错误给用户,同时关闭连接,以防止三路握手操作继续进行下去;<br>         如果select返回大于0的值,则需要检查套接口描述符是否可读或可写;如果套接口描述符可读或可写,则我们可以通过调用getsockopt来得到套接口上待处理的错误(SO_ERROR),如果连接建立成功,这个错误值将是0,如果建立连接时遇到错误,则这个值是连接错误所对应的errno值(比如:ECONNREFUSED,ETIMEDOUT等).<br>“读取套接口上的错误”是遇到的第一个可移植性问题;如果出现问题,getsockopt源自Berkeley的实现是返回0,等待处理的错误在变量errno中返回;但是Solaris会让getsockopt返回-1,errno置为待处理的错误;我们对这两种情况都要处理;</p><p>这样,在处理非阻塞connect时,在不同的套接口实现的平台中存在的移植性问题,首先,有可能在调用select之前,连接就已经建立成功,而且对方的数据已经到来.在这种情况下,连接成功时套接口将既可读又可写.这和连接失败时是一样的.这个时候我们还得通过getsockopt来读取错误值;这是第二个可移植性问题;<br>移植性问题总结:<br>1.对于出错的套接口描述符,getsockopt的返回值源自Berkeley的实现是返回0,待处理的错误值存储在errno中;而源自Solaris的实现是返回0,待处理的错误存储在errno中;(套接口描述符出错时调用getsockopt的返回值不可移植)<br>2.有可能在调用select之前,连接就已经建立成功,而且对方的数据已经到来,在这种情况下,套接口描述符是既可读又可写;这与套接口描述符出错时是一样的;(怎样判断连接是否建立成功的条件不可移植)</p><p>这样的话,在我们判断连接是否建立成功的条件不唯一时,我们可以有以下的方法来解决这个问题:<br>1.调用getpeername代替getsockopt.如果调用getpeername失败,getpeername返回ENOTCONN,表示连接建立失败,我们必须以SO_ERROR调用getsockopt得到套接口描述符上的待处理错误;<br>2.调用read,读取长度为0字节的数据.如果read调用失败,则表示连接建立失败,而且read返回的errno指明了连接失败的原因.如果连接建立成功,read应该返回0;<br>3.再调用一次connect.它应该失败,如果错误errno是EISCONN,就表示套接口已经建立,而且第一次连接是成功的;否则,连接就是失败的;</p><p>被中断的connect:<br>如果在一个阻塞式套接口上调用connect,在TCP的三路握手操作完成之前被中断了,比如说,被捕获的信号中断,将会发生什么呢?假定connect不会自动重启,它将返回EINTR.那么,这个时候,我们就不能再调用connect等待连接建立完成了,如果再次调用connect来等待连接建立完成的话,connect将会返回错误值EADDRINUSE.在这种情况下,应该做的是调用select,就像在非阻塞式connect中所做的一样.然后,select在连接建立成功(使套接口描述符可写)或连接建立失败(使套接口描述符既可读又可写)时返回;</p><p>转自：<a href="http://bdxnote.blog.163.com/blog/static/844423520098651256549/">http://bdxnote.blog.163.com/blog/static/844423520098651256549/</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在一个TCP套接口被设置为非阻塞之后调用connect,connect会立即返回EINPROGRESS错误,表示连接操作正在进行中,但是仍未完成;同时TCP的三路握手操作继续进行;在这之后,我们可以调用select来检查这个链接是否建立成功;非阻塞connect有三种用途:</summary>
+      
+    
+    
+    
+    <category term="网络通信" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>网络通信常见问题</title>
+    <link href="http://yoursite.com/2017/05/26/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/2017/05/26/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</id>
+    <published>2017-05-26T09:44:05.000Z</published>
+    <updated>2017-05-27T03:32:04.161Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、socket流程"><a href="#一、socket流程" class="headerlink" title="一、socket流程"></a>一、socket流程</h2><p>socket 是面向客户&#x2F;服务器模型而设计的，</p><p>针对客户和服务器程序提供不同的socket 系统调用</p><h2 id="二、长连接和短连接"><a href="#二、长连接和短连接" class="headerlink" title="二、长连接和短连接"></a>二、长连接和短连接</h2><p>长连接：在多次请求中保持连接，使用同一个连接处理多次请求，直至出现错误或者异常才断开，并重新建立新的连接。<br>一般通过服务器端的长时间的读超时和客户端重用连接来实现。<br>典型例子：ui-&gt;as  as-&gt;bs<br>短连接：每个请求建立一个连接，请求处理完成，则断开连接。<br>一般服务器端使用短的读超时。<br>典型例子：browser-&gt;apache  client-&gt;LDC<br>ependingpoll同时支持长连接和短链接 </p><h2 id="三、常见问题"><a href="#三、常见问题" class="headerlink" title="三、常见问题"></a>三、常见问题</h2><h3 id="1-socket不够"><a href="#1-socket不够" class="headerlink" title="1.socket不够"></a>1.socket不够</h3><p>大压力短连接，出现大量close_wait<br>解决方法：<br>lg.l_onoff &#x3D; 1;<br>lg.l_linger &#x3D; 0;<br>setsockopt(svrsock-&gt;sock, SOL_SOCKET, SO_LINGER,  (const char*)&amp;lg, sizeof(lg));</p><h3 id="2-长连接请求混乱"><a href="#2-长连接请求混乱" class="headerlink" title="2.长连接请求混乱"></a>2.长连接请求混乱</h3><p>长连接请求错乱，收到其他线程的请求<br>导致原因：在长连接出错的情况下，并没有关闭连接 </p><h3 id="3-SIGPIPE信号"><a href="#3-SIGPIPE信号" class="headerlink" title="3.SIGPIPE信号"></a>3.SIGPIPE信号</h3><p>向断开（半关闭）的连接中write数据时产生<br>通常处理方式：<br>signal(SIGPIPE, SIG_IGN);<br>SIGPIPE信号被忽略 </p><h3 id="4-TCP-NODELAY"><a href="#4-TCP-NODELAY" class="headerlink" title="4.TCP_NODELAY"></a>4.TCP_NODELAY</h3><p>TCP_NODELAY 不使用Nagle算法，不会将小包进行拼接成大包再进行发送，直接将小包发送出去，会使得小包时候用户体验非常好。<br>如果没有TCP_NODELAY在压力的情况下，会有延时（40ms）<br>Ependingpool自己默认的accept函数没有将socket设置成TCP_NODELAY.需要自己写回调函数来控制。<br>加入如下语句<br>client &#x3D; ul_accept(sock, (struct sockaddr *)&amp;sin, &amp;slen);<br>       if (client &gt; 0)<br>               setsockopt(client, IPPROTO_TCP, TCP_NODELAY, &amp;on, sizeof(on));       </p><h3 id="5-SO-REUSEADDR"><a href="#5-SO-REUSEADDR" class="headerlink" title="5.SO_REUSEADDR"></a>5.SO_REUSEADDR</h3><p>通常用于服务监听套接字，支持服务快速重启<br>如：<br>&#x2F;&#x2F; 地址复用<br>int on &#x3D; 1;<br>setsockopt(listen_sd, SOL_SOCKET, SO_REUSEADDR, &amp;on, sizeof(on));      </p><h3 id="6-一次读写不完全"><a href="#6-一次读写不完全" class="headerlink" title="6.一次读写不完全"></a>6.一次读写不完全</h3><p>正常情况下，read和write可能读写比指定数量少的数据<br>原因可能是：<br>内核缓冲区满<br>被信号中断<br>解决方法：<br>反复调用直到数据被全部读（写）完（注意死循环） </p><h3 id="7-网络字节序转换"><a href="#7-网络字节序转换" class="headerlink" title="7.网络字节序转换"></a>7.网络字节序转换</h3><p>big-endian和little-endian<br>相关函数：<br>htonl、htons、ntohl、ntohs<br>保证程序兼容性和可移植性 </p><h3 id="8-select中的bug"><a href="#8-select中的bug" class="headerlink" title="8.select中的bug"></a>8.select中的bug</h3><p>不能操作多于1024个的socket<br>FD_SETSIZE在内核中定义为1024，并使用其声明最大的描述字集大小<br>解决方法：<br>调整程序，使其所需socket少于1024<br>使用poll()来代替select() </p><h3 id="9-带超时的select"><a href="#9-带超时的select" class="headerlink" title="9.带超时的select"></a>9.带超时的select</h3><p>将要读的套接字加入rset中<br>调用select()。如果返回0则超时，返回-1则出错，否则利用FD_ISSET宏检查rset中的该套接字是否置位，如果是，则该套接字有数据可读，调用read()来读取<br>写超时控制和读超时控制的操作类似，但设置的是wret </p><h3 id="10-带超时的Connect"><a href="#10-带超时的Connect" class="headerlink" title="10.带超时的Connect"></a>10.带超时的Connect</h3><p>设置套接字为非阻塞：<br>flags&#x3D;fcntl(sockfd,F_GETFL,0);<br>fcntl(sockfd,F_SETFL,flags|O_NONBLOCK);<br>调用connect()。如果返回成功则连接已经建立。不成功则检查errno，如果errno为EINPROGRESS，表示连接正在试图建立中。其他错误则应返回出错。<br>将套接字加入rset和wset，调用select()。返回0则表示超时。<br>如果select()返回成功，则检查sockfd的状态，仅可写则为连接建立成功，可读且可写表示出错。<br>恢复套接字的原有状态：<br>fcntl(sockfd,F_SETFL,flags);<br>11.调用被信号中断<br>大多数的阻塞系统调用都可能被信号中断<br>read()、write()、accept()、select()、connect()……<br>恢复被中断的系统调用<br>设置信号标志为SA_RESTART（并不是所有系统都支持；并不是所有系统调用都支持）<br>判断errno为EINTR，则再次调用函数（推荐）<br>read()、write()、select()、accept()可以重新调用一次：<br>do {<br>     result &#x3D; read(sockfd,buf,len);<br>}while ((result &#x3D;&#x3D; -1) &amp;&amp; (errno &#x3D;&#x3D; EINTR));<br>connect()被中断不能重新调用，只能使用select()来等待连接完成。</p><p>转自：<a href="http://blog.csdn.net/wzhwho/article/details/6169620">http://blog.csdn.net/wzhwho/article/details/6169620</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、socket流程&quot;&gt;&lt;a href=&quot;#一、socket流程&quot; class=&quot;headerlink&quot; title=&quot;一、socket流程&quot;&gt;&lt;/a&gt;一、socket流程&lt;/h2&gt;&lt;p&gt;socket 是面向客户&amp;#x2F;服务器模型而设计的，&lt;/p&gt;
+&lt;p&gt;针对</summary>
+      
+    
+    
+    
+    <category term="网络通信" scheme="http://yoursite.com/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/05/20/hello-world/"/>
+    <id>http://yoursite.com/2017/05/20/hello-world/</id>
+    <published>2017-05-20T13:37:09.389Z</published>
+    <updated>2017-05-26T09:54:59.134Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    <category term="Test" scheme="http://yoursite.com/categories/Test/"/>
+    
+    
+    <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
