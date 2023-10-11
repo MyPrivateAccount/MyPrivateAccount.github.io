@@ -1,23 +1,2392 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!doctype html>
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
-{% block page_class %}
-  {% if is_home() %} page-home {% endif %}
-{% endblock %}
 
-{% block content %}
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="江山小楼" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="江山小楼">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="江山小楼">
+<meta property="og:locale">
+<meta property="article:author" content="开心的萝卜">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>江山小楼</title>
+<meta name="generator" content="Hexo 7.0.0-rc2"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">江山小楼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
   <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/10/11/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E7%AC%94%E8%AE%B0%EF%BC%9AASCII%EF%BC%8CUnicode%E5%92%8CUTF-8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/10/11/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81%E7%AC%94%E8%AE%B0%EF%BC%9AASCII%EF%BC%8CUnicode%E5%92%8CUTF-8/" itemprop="url">字符编码笔记：ASCII，Unicode和UTF-8</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-10-11T13:05:55+08:00">
+                2023-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81/" itemprop="url" rel="index">
+                    <span itemprop="name">字符编码</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>作者： 阮一峰<br>日期： 2007年10月28日<br>今天中午，我突然想搞清楚Unicode和UTF-8之间的关系，于是就开始在网上查资料。<br>结果，这个问题比我想象的复杂，从午饭后一直看到晚上9点，才算初步搞清楚。<br>下面就是我的笔记，主要用来整理自己的思路。但是，我尽量试图写得通俗易懂，希望能对其他朋友有用。毕竟，字符编码是计算机技术的基石，想要熟练使用计算机，就必须懂得一点字符编码的知识。</p>
+<ol>
+<li>ASCII码<br>我们知道，在计算机内部，所有的信息最终都表示为一个二进制的字符串。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个字节（byte）。也就是说，一个字节一共可以用来表示256种不同的状态，每一个状态对应一个符号，就是256个符号，从0000000到11111111。<br>上个世纪60年代，美国制定了一套字符编码，对英语字符与二进制位之间的关系，做了统一规定。这被称为ASCII码，一直沿用至今。<br>ASCII码一共规定了128个字符的编码，比如空格”SPACE”是32（二进制00100000），大写的字母A是65（二进制01000001）。这128个符号（包括32个不能打印出来的控制符号），只占用了一个字节的后面7位，最前面的1位统一规定为0。<br>2、非ASCII编码<br>英语用128个符号编码就够了，但是用来表示其他语言，128个符号是不够的。比如，在法语中，字母上方有注音符号，它就无法用ASCII码表示。于是，一些欧洲国家就决定，利用字节中闲置的最高位编入新的符号。比如，法语中的é的编码为130（二进制10000010）。这样一来，这些欧洲国家使用的编码体系，可以表示最多256个符号。<br>但是，这里又出现了新的问题。不同的国家有不同的字母，因此，哪怕它们都使用256个符号的编码方式，代表的字母却不一样。比如，130在法语编码中代表了é，在希伯来语编码中却代表了字母Gimel (ג)，在俄语编码中又会代表另一个符号。但是不管怎样，所有这些编码方式中，0–127表示的符号是一样的，不一样的只是128–255的这一段。<br>至于亚洲国家的文字，使用的符号就更多了，汉字就多达10万左右。一个字节只能表示256种符号，肯定是不够的，就必须使用多个字节表达一个符号。比如，简体中文常见的编码方式是GB2312，使用两个字节表示一个汉字，所以理论上最多可以表示256x256&#x3D;65536个符号。<br>中文编码的问题需要专文讨论，这篇笔记不涉及。这里只指出，虽然都是用多个字节表示一个符号，但是GB类的汉字编码与后文的Unicode和UTF-8是毫无关系的。<br>3.Unicode<br>正如上一节所说，世界上存在着多种编码方式，同一个二进制数字可以被解释成不同的符号。因此，要想打开一个文本文件，就必须知道它的编码方式，否则用错误的编码方式解读，就会出现乱码。为什么电子邮件常常出现乱码？就是因为发信人和收信人使用的编码方式不一样。<br>可以想象，如果有一种编码，将世界上所有的符号都纳入其中。每一个符号都给予一个独一无二的编码，那么乱码问题就会消失。这就是Unicode，就像它的名字都表示的，这是一种所有符号的编码。<br>Unicode当然是一个很大的集合，现在的规模可以容纳100多万个符号。每个符号的编码都不一样，比如，U+0639表示阿拉伯字母Ain，U+0041表示英语的大写字母A，U+4E25表示汉字”严”。具体的符号对应表，可以查询unicode.org，或者专门的汉字对应表。</li>
+<li>Unicode的问题<br>需要注意的是，Unicode只是一个符号集，它只规定了符号的二进制代码，却没有规定这个二进制代码应该如何存储。<br>比如，汉字”严”的unicode是十六进制数4E25，转换成二进制数足足有15位（100111000100101），也就是说这个符号的表示至少需要2个字节。表示其他更大的符号，可能需要3个字节或者4个字节，甚至更多。<br>这里就有两个严重的问题，第一个问题是，如何才能区别Unicode和ASCII？计算机怎么知道三个字节表示一个符号，而不是分别表示三个符号呢？第二个问题是，我们已经知道，英文字母只用一个字节表示就够了，如果Unicode统一规定，每个符号用三个或四个字节表示，那么每个英文字母前都必然有二到三个字节是0，这对于存储来说是极大的浪费，文本文件的大小会因此大出二三倍，这是无法接受的。<br>它们造成的结果是：1）出现了Unicode的多种存储方式，也就是说有许多种不同的二进制格式，可以用来表示Unicode。2）Unicode在很长一段时间内无法推广，直到互联网的出现。<br>5.UTF-8<br>互联网的普及，强烈要求出现一种统一的编码方式。UTF-8就是在互联网上使用最广的一种Unicode的实现方式。其他实现方式还包括UTF-16（字符用两个字节或四个字节表示）和UTF-32（字符用四个字节表示），不过在互联网上基本不用。重复一遍，这里的关系是，UTF-8是Unicode的实现方式之一。<br>UTF-8最大的一个特点，就是它是一种变长的编码方式。它可以使用1~4个字节表示一个符号，根据不同的符号而变化字节长度。<br>UTF-8的编码规则很简单，只有二条：<br>1）对于单字节的符号，字节的第一位设为0，后面7位为这个符号的unicode码。因此对于英语字母，UTF-8编码和ASCII码是相同的。<br>2）对于n字节的符号（n&gt;1），第一个字节的前n位都设为1，第n+1位设为0，后面字节的前两位一律设为10。剩下的没有提及的二进制位，全部为这个符号的unicode码。<br>下表总结了编码规则，字母x表示可用编码的位。<br>Unicode符号范围 | UTF-8编码方式<br>(十六进制) | （二进制）<br>——————–+———————————————<br>0000 0000-0000 007F | 0xxxxxxx<br>0000 0080-0000 07FF | 110xxxxx 10xxxxxx<br>0000 0800-0000 FFFF | 1110xxxx 10xxxxxx 10xxxxxx<br>0001 0000-0010 FFFF | 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx<br>跟据上表，解读UTF-8编码非常简单。如果一个字节的第一位是0，则这个字节单独就是一个字符；如果第一位是1，则连续有多少个1，就表示当前字符占用多少个字节。<br>下面，还是以汉字”严”为例，演示如何实现UTF-8编码。<br>已知”严”的unicode是4E25（100111000100101），根据上表，可以发现4E25处在第三行的范围内（0000 0800-0000 FFFF），因此”严”的UTF-8编码需要三个字节，即格式是”1110xxxx 10xxxxxx 10xxxxxx”。然后，从”严”的最后一个二进制位开始，依次从后向前填入格式中的x，多出的位补0。这样就得到了，”严”的UTF-8编码是”11100100 10111000 10100101”，转换成十六进制就是E4B8A5。</li>
+<li>Unicode与UTF-8之间的转换<br>通过上一节的例子，可以看到”严”的Unicode码是4E25，UTF-8编码是E4B8A5，两者是不一样的。它们之间的转换可以通过程序实现。<br>在Windows平台下，有一个最简单的转化方法，就是使用内置的记事本小程序Notepad.exe。打开文件后，点击”文件”菜单中的”另存为”命令，会跳出一个对话框，在最底部有一个”编码”的下拉条。<br>bg2007102801.jpg<br>里面有四个选项：ANSI，Unicode，Unicode big endian 和 UTF-8。<br>1）ANSI是默认的编码方式。对于英文文件是ASCII编码，对于简体中文文件是GB2312编码（只针对Windows简体中文版，如果是繁体中文版会采用Big5码）。<br>2）Unicode编码指的是UCS-2编码方式，即直接用两个字节存入字符的Unicode码。这个选项用的little endian格式。<br>3）Unicode big endian编码与上一个选项相对应。我在下一节会解释little endian和big endian的涵义。<br>4）UTF-8编码，也就是上一节谈到的编码方法。<br>选择完”编码方式”后，点击”保存”按钮，文件的编码方式就立刻转换好了。</li>
+<li>Little endian和Big endian<br>上一节已经提到，Unicode码可以采用UCS-2格式直接存储。以汉字”严”为例，Unicode码是4E25，需要用两个字节存储，一个字节是4E，另一个字节是25。存储的时候，4E在前，25在后，就是Big endian方式；25在前，4E在后，就是Little endian方式。<br>这两个古怪的名称来自英国作家斯威夫特的《格列佛游记》。在该书中，小人国里爆发了内战，战争起因是人们争论，吃鸡蛋时究竟是从大头(Big-Endian)敲开还是从小头(Little-Endian)敲开。为了这件事情，前后爆发了六次战争，一个皇帝送了命，另一个皇帝丢了王位。<br>因此，第一个字节在前，就是”大头方式”（Big endian），第二个字节在前就是”小头方式”（Little endian）。<br>那么很自然的，就会出现一个问题：计算机怎么知道某一个文件到底采用哪一种方式编码？<br>Unicode规范中定义，每一个文件的最前面分别加入一个表示编码顺序的字符，这个字符的名字叫做”零宽度非换行空格”（ZERO WIDTH NO-BREAK SPACE），用FEFF表示。这正好是两个字节，而且FF比FE大1。<br>如果一个文本文件的头两个字节是FE FF，就表示该文件采用大头方式；如果头两个字节是FF FE，就表示该文件采用小头方式。</li>
+<li>实例<br>下面，举一个实例。<br>打开”记事本”程序Notepad.exe，新建一个文本文件，内容就是一个”严”字，依次采用ANSI，Unicode，Unicode big endian 和 UTF-8编码方式保存。<br>然后，用文本编辑软件UltraEdit中的”十六进制功能”，观察该文件的内部编码方式。<br>1）ANSI：文件的编码就是两个字节”D1 CF”，这正是”严”的GB2312编码，这也暗示GB2312是采用大头方式存储的。<br>2）Unicode：编码是四个字节”FF FE 25 4E”，其中”FF FE”表明是小头方式存储，真正的编码是4E25。<br>3）Unicode big endian：编码是四个字节”FE FF 4E 25”，其中”FE FF”表明是大头方式存储。<br>4）UTF-8：编码是六个字节”EF BB BF E4 B8 A5”，前三个字节”EF BB BF”表示这是UTF-8编码，后三个”E4B8A5”就是”严”的具体编码，它的存储顺序与编码顺序是一致的。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/10/11/%E6%8A%A2%E5%8D%A0%E5%BC%8F%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%92%8C%E9%9D%9E%E6%8A%A2%E5%8D%A0%E5%BC%8F%EF%BC%88%E8%BD%AE%E8%AF%A2%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%EF%BC%89%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E7%94%A8%E9%80%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/10/11/%E6%8A%A2%E5%8D%A0%E5%BC%8F%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E5%92%8C%E9%9D%9E%E6%8A%A2%E5%8D%A0%E5%BC%8F%EF%BC%88%E8%BD%AE%E8%AF%A2%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%EF%BC%89%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%8C%E4%BB%A5%E5%8F%8A%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95%E7%9A%84%E7%94%A8%E9%80%94/" itemprop="url">抢占式任务调度和非抢占式（轮询任务调度）的区别，以及任务调度算法的用途。</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-10-11T13:03:33+08:00">
+                2023-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">多线程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>说说轮巡任务调度与抢占式任务调度的区别？</p>
+</blockquote>
+<h6 id="1-轮询任务调度与抢占式任务调度的区别在于抢占式调度可以因为优先级高的任务抢占cpu，而轮询的不能。"><a href="#1-轮询任务调度与抢占式任务调度的区别在于抢占式调度可以因为优先级高的任务抢占cpu，而轮询的不能。" class="headerlink" title="1.轮询任务调度与抢占式任务调度的区别在于抢占式调度可以因为优先级高的任务抢占cpu，而轮询的不能。"></a>1.轮询任务调度与抢占式任务调度的区别在于抢占式调度可以因为优先级高的任务抢占cpu，而轮询的不能。</h6><h6 id="2-当软件线程个数超过硬件线程个数的时候，支持抢占式多任务处理的操作系统一般会采用时间片轮转调度的方案。"><a href="#2-当软件线程个数超过硬件线程个数的时候，支持抢占式多任务处理的操作系统一般会采用时间片轮转调度的方案。" class="headerlink" title="2.当软件线程个数超过硬件线程个数的时候，支持抢占式多任务处理的操作系统一般会采用时间片轮转调度的方案。"></a>2.当软件线程个数超过硬件线程个数的时候，支持抢占式多任务处理的操作系统一般会采用时间片轮转调度的方案。</h6><h6 id="3-对于RTOS中，理解这两个概念是很重要的。实时系统对于响应时间是有非常严格的要求，尤其是在硬实时系统中，没有满足响应时间的上限将视为系统失败。影响RTOS响应时间的一个重要方面就是任务调度算法。在-RTOS中，主要的调度算法是基于任务优先级的抢占式调度。在这种调度算法中，系统总是选择优先级别的最高的算法进行调度，并且-一旦高优先级别的任务准备就绪之后，它就会马上被调度而不等待低优先级的任务主动放弃CPU。这和通用OS的时间片轮转调度算法是-不一样的，在时间片轮转调度算法中，只有等任务主动放弃CPU，高优先级的任务才有调度的优先权。在基于任务优先级抢占式调度算法中，会产生一个优先级反转问题。解决这个问题的方式主要包括继承优先级和天花板策略。继承优先级策略是一旦高优先级的任务所需要的竞争资源被低优先级的任务使用，就提高低优先级的任务的优先级别，从而使得能使竞争资源尽快释放。天花板策略是在创建信号量的时候，根据可能使用该信号量所有的任务的最高优先级别来设置当前任务的优先级，这个优先级是由创建资源的用户来决定。"><a href="#3-对于RTOS中，理解这两个概念是很重要的。实时系统对于响应时间是有非常严格的要求，尤其是在硬实时系统中，没有满足响应时间的上限将视为系统失败。影响RTOS响应时间的一个重要方面就是任务调度算法。在-RTOS中，主要的调度算法是基于任务优先级的抢占式调度。在这种调度算法中，系统总是选择优先级别的最高的算法进行调度，并且-一旦高优先级别的任务准备就绪之后，它就会马上被调度而不等待低优先级的任务主动放弃CPU。这和通用OS的时间片轮转调度算法是-不一样的，在时间片轮转调度算法中，只有等任务主动放弃CPU，高优先级的任务才有调度的优先权。在基于任务优先级抢占式调度算法中，会产生一个优先级反转问题。解决这个问题的方式主要包括继承优先级和天花板策略。继承优先级策略是一旦高优先级的任务所需要的竞争资源被低优先级的任务使用，就提高低优先级的任务的优先级别，从而使得能使竞争资源尽快释放。天花板策略是在创建信号量的时候，根据可能使用该信号量所有的任务的最高优先级别来设置当前任务的优先级，这个优先级是由创建资源的用户来决定。" class="headerlink" title="3.对于RTOS中，理解这两个概念是很重要的。实时系统对于响应时间是有非常严格的要求，尤其是在硬实时系统中，没有满足响应时间的上限将视为系统失败。影响RTOS响应时间的一个重要方面就是任务调度算法。在 RTOS中，主要的调度算法是基于任务优先级的抢占式调度。在这种调度算法中，系统总是选择优先级别的最高的算法进行调度，并且 一旦高优先级别的任务准备就绪之后，它就会马上被调度而不等待低优先级的任务主动放弃CPU。这和通用OS的时间片轮转调度算法是 不一样的，在时间片轮转调度算法中，只有等任务主动放弃CPU，高优先级的任务才有调度的优先权。在基于任务优先级抢占式调度算法中，会产生一个优先级反转问题。解决这个问题的方式主要包括继承优先级和天花板策略。继承优先级策略是一旦高优先级的任务所需要的竞争资源被低优先级的任务使用，就提高低优先级的任务的优先级别，从而使得能使竞争资源尽快释放。天花板策略是在创建信号量的时候，根据可能使用该信号量所有的任务的最高优先级别来设置当前任务的优先级，这个优先级是由创建资源的用户来决定。"></a>3.对于RTOS中，理解这两个概念是很重要的。实时系统对于响应时间是有非常严格的要求，尤其是在硬实时系统中，没有满足响应时间的上限将视为系统失败。影响RTOS响应时间的一个重要方面就是任务调度算法。在 RTOS中，主要的调度算法是基于任务优先级的抢占式调度。在这种调度算法中，系统总是选择优先级别的最高的算法进行调度，并且 一旦高优先级别的任务准备就绪之后，它就会马上被调度而不等待低优先级的任务主动放弃CPU。这和通用OS的时间片轮转调度算法是 不一样的，在时间片轮转调度算法中，只有等任务主动放弃CPU，高优先级的任务才有调度的优先权。在基于任务优先级抢占式调度算法中，会产生一个优先级反转问题。解决这个问题的方式主要包括继承优先级和天花板策略。继承优先级策略是一旦高优先级的任务所需要的竞争资源被低优先级的任务使用，就提高低优先级的任务的优先级别，从而使得能使竞争资源尽快释放。天花板策略是在创建信号量的时候，根据可能使用该信号量所有的任务的最高优先级别来设置当前任务的优先级，这个优先级是由创建资源的用户来决定。</h6><h6 id="4-很多编程人员都认为，使用多线程能够提升程序的性能，如果少量的线程能够提升程序的性能，他们就会认为更多的线程能够更好。但实际上，多线程只是为不同的程序比较合理地安排运行时间，更加充分的利用系统资源，这当中存在着一个线程数和程序性能的平衡，过多的线程可能会严重影响程序的性能。这种影响主要有以下两个方面：首先，将给定的工作量划分给过多的线程会造成每个线程的工作量过少，因此可能导致线程启动和终止时的开销比程序实际工作的开销还要多；其次，过多并发线程的存在将导致共享有限硬件资源的开销增大"><a href="#4-很多编程人员都认为，使用多线程能够提升程序的性能，如果少量的线程能够提升程序的性能，他们就会认为更多的线程能够更好。但实际上，多线程只是为不同的程序比较合理地安排运行时间，更加充分的利用系统资源，这当中存在着一个线程数和程序性能的平衡，过多的线程可能会严重影响程序的性能。这种影响主要有以下两个方面：首先，将给定的工作量划分给过多的线程会造成每个线程的工作量过少，因此可能导致线程启动和终止时的开销比程序实际工作的开销还要多；其次，过多并发线程的存在将导致共享有限硬件资源的开销增大" class="headerlink" title="4.很多编程人员都认为，使用多线程能够提升程序的性能，如果少量的线程能够提升程序的性能，他们就会认为更多的线程能够更好。但实际上，多线程只是为不同的程序比较合理地安排运行时间，更加充分的利用系统资源，这当中存在着一个线程数和程序性能的平衡，过多的线程可能会严重影响程序的性能。这种影响主要有以下两个方面：首先，将给定的工作量划分给过多的线程会造成每个线程的工作量过少，因此可能导致线程启动和终止时的开销比程序实际工作的开销还要多；其次，过多并发线程的存在将导致共享有限硬件资源的开销增大"></a>4.很多编程人员都认为，使用多线程能够提升程序的性能，如果少量的线程能够提升程序的性能，他们就会认为更多的线程能够更好。但实际上，多线程只是为不同的程序比较合理地安排运行时间，更加充分的利用系统资源，这当中存在着一个线程数和程序性能的平衡，过多的线程可能会严重影响程序的性能。这种影响主要有以下两个方面：首先，将给定的工作量划分给过多的线程会造成每个线程的工作量过少，因此可能导致线程启动和终止时的开销比程序实际工作的开销还要多；其次，过多并发线程的存在将导致共享有限硬件资源的开销增大</h6><p>操作系统使用进程将它们正在执行的不同应用程序分开。线程是操作系统分配处理器时间的基本单元，并且进程中可以有多个线程同时执行代码。每个线程都维护异常处理程序、调度优先级和一组系统用于在调度该线程前保存线程上下文的结构。线程上下文包括为使线程在线程的宿主进程地址空间中无缝地继续执行所需的所有信息，包括线程的 CPU 寄存器组和堆栈。<br>当软件线程个数超过硬件线程个数的时候，支持抢占式多任务处理的操作系统一般会采用时间片轮转调度的方案。它通过以下方式实现这一点：在需要硬件线程时间的软件线程之间分割可用硬件线程时间，并轮流为每个线程分配硬件线程时间片（time slice）。当前执行的软件线程在其时间片结束时被挂起，而另一个软件线程继续运行。当系统从一个软件线程切换到另一个软件线程时，它将保存被抢占的软件线程的线程上下文，并重新加载线程队列中下一个软件线程的已保存线程上下文。<br>时间片的长度取决于操作系统和处理器。由于每个时间片都很小，因此即使只有一个处理器，多个线程看起来似乎也是在同时执行。这实际上就是多处理器系统中发生的情形，在此类系统中，可执行线程分布在多个可用处理器中。<br>时间片机制保证了所有的软件线程都能够被执行，这样也就避免了某些软件线程长期占据硬件线程，而导致其他的软件线程出现饥饿（starvation）的情况。但是，操作系统的时间片轮转调度方案也将引入额外的开销，随着软件线程的增多，这种开销将会急剧增加，进而降低系统性能。这种开销主要有以下几种：</p>
+<h6 id="1-首先是线程间切换时保存和恢复进程寄存器的开销。在系统要进行线程间切换的时候，需要保存当前线程的寄存器状态，以便在下次回调到当前线程的时候，能够恢复线程寄存器继续运行。当存在少量线程的时候，进程调度程序会给每一个线程分配足够长的时间片，相比较之下，保存和恢复线程寄存器的开销变得不是很显著。但是随着线程数目的增加，线程调度程序分给每个线程的时间片也会相应减少，而保存和恢复线程寄存器的开销不变，这样，在每个时间片当中，系统将更多的时间用于保存和恢复线程寄存器，就会显著地降低系统性能。"><a href="#1-首先是线程间切换时保存和恢复进程寄存器的开销。在系统要进行线程间切换的时候，需要保存当前线程的寄存器状态，以便在下次回调到当前线程的时候，能够恢复线程寄存器继续运行。当存在少量线程的时候，进程调度程序会给每一个线程分配足够长的时间片，相比较之下，保存和恢复线程寄存器的开销变得不是很显著。但是随着线程数目的增加，线程调度程序分给每个线程的时间片也会相应减少，而保存和恢复线程寄存器的开销不变，这样，在每个时间片当中，系统将更多的时间用于保存和恢复线程寄存器，就会显著地降低系统性能。" class="headerlink" title="1.首先是线程间切换时保存和恢复进程寄存器的开销。在系统要进行线程间切换的时候，需要保存当前线程的寄存器状态，以便在下次回调到当前线程的时候，能够恢复线程寄存器继续运行。当存在少量线程的时候，进程调度程序会给每一个线程分配足够长的时间片，相比较之下，保存和恢复线程寄存器的开销变得不是很显著。但是随着线程数目的增加，线程调度程序分给每个线程的时间片也会相应减少，而保存和恢复线程寄存器的开销不变，这样，在每个时间片当中，系统将更多的时间用于保存和恢复线程寄存器，就会显著地降低系统性能。"></a>1.首先是线程间切换时保存和恢复进程寄存器的开销。在系统要进行线程间切换的时候，需要保存当前线程的寄存器状态，以便在下次回调到当前线程的时候，能够恢复线程寄存器继续运行。当存在少量线程的时候，进程调度程序会给每一个线程分配足够长的时间片，相比较之下，保存和恢复线程寄存器的开销变得不是很显著。但是随着线程数目的增加，线程调度程序分给每个线程的时间片也会相应减少，而保存和恢复线程寄存器的开销不变，这样，在每个时间片当中，系统将更多的时间用于保存和恢复线程寄存器，就会显著地降低系统性能。</h6><h6 id="2-另一方面，在使用时间片机制的时候，保存和恢复线程使用的cache的开销则是更敏感的一种开销。现代体系结构中，cache通常比主存快10到100倍，CPU访问cache并命中对于系统性能的提高具有非常重要的作用。而当存在线程切换的时候，新的线程要访问的数据尚未装入cache，CPU需要从主存中读取信息的同时，cache替换策略把该地址所在的那块存储内容从主存拷贝到cache中。一般情况下，cache替换策略是使用最近最少使用策略（LRU）选择的，LRU策略是把当前近期cache中使用次数最少的那块数据块替换出去，而这些数据块中的数据很可能就是上几个时间片的线程使用的。这样，各个线程就在不断地竞争cache，相互淘汰彼此使用的cache数据，不断造成cache扑空，最终降低了系统性能。"><a href="#2-另一方面，在使用时间片机制的时候，保存和恢复线程使用的cache的开销则是更敏感的一种开销。现代体系结构中，cache通常比主存快10到100倍，CPU访问cache并命中对于系统性能的提高具有非常重要的作用。而当存在线程切换的时候，新的线程要访问的数据尚未装入cache，CPU需要从主存中读取信息的同时，cache替换策略把该地址所在的那块存储内容从主存拷贝到cache中。一般情况下，cache替换策略是使用最近最少使用策略（LRU）选择的，LRU策略是把当前近期cache中使用次数最少的那块数据块替换出去，而这些数据块中的数据很可能就是上几个时间片的线程使用的。这样，各个线程就在不断地竞争cache，相互淘汰彼此使用的cache数据，不断造成cache扑空，最终降低了系统性能。" class="headerlink" title="2.另一方面，在使用时间片机制的时候，保存和恢复线程使用的cache的开销则是更敏感的一种开销。现代体系结构中，cache通常比主存快10到100倍，CPU访问cache并命中对于系统性能的提高具有非常重要的作用。而当存在线程切换的时候，新的线程要访问的数据尚未装入cache，CPU需要从主存中读取信息的同时，cache替换策略把该地址所在的那块存储内容从主存拷贝到cache中。一般情况下，cache替换策略是使用最近最少使用策略（LRU）选择的，LRU策略是把当前近期cache中使用次数最少的那块数据块替换出去，而这些数据块中的数据很可能就是上几个时间片的线程使用的。这样，各个线程就在不断地竞争cache，相互淘汰彼此使用的cache数据，不断造成cache扑空，最终降低了系统性能。"></a>2.另一方面，在使用时间片机制的时候，保存和恢复线程使用的cache的开销则是更敏感的一种开销。现代体系结构中，cache通常比主存快10到100倍，CPU访问cache并命中对于系统性能的提高具有非常重要的作用。而当存在线程切换的时候，新的线程要访问的数据尚未装入cache，CPU需要从主存中读取信息的同时，cache替换策略把该地址所在的那块存储内容从主存拷贝到cache中。一般情况下，cache替换策略是使用最近最少使用策略（LRU）选择的，LRU策略是把当前近期cache中使用次数最少的那块数据块替换出去，而这些数据块中的数据很可能就是上几个时间片的线程使用的。这样，各个线程就在不断地竞争cache，相互淘汰彼此使用的cache数据，不断造成cache扑空，最终降低了系统性能。</h6><h6 id="3-此外，在更底层的存储器结构上也存在相似的问题，那就是线程对主存的争夺。现代大部分操作系统都实现了虚拟内存。一台机器上同时运行着很多程序，这些程序所需的存储空间可能比存储器的实际容量要大得多，但是在每个时间点，存储器只有一部分被激活。主存只需存放众多程序中的活跃部分，就像cache中只存放一个程序的活跃部分一样，而其他的部分则存储到磁盘上。由于每个线程都有自己的栈空间和私有数据结构。类似于对cache的争夺，随着线程数的增加，线程之间就会争夺主存，导致性能上的损失。"><a href="#3-此外，在更底层的存储器结构上也存在相似的问题，那就是线程对主存的争夺。现代大部分操作系统都实现了虚拟内存。一台机器上同时运行着很多程序，这些程序所需的存储空间可能比存储器的实际容量要大得多，但是在每个时间点，存储器只有一部分被激活。主存只需存放众多程序中的活跃部分，就像cache中只存放一个程序的活跃部分一样，而其他的部分则存储到磁盘上。由于每个线程都有自己的栈空间和私有数据结构。类似于对cache的争夺，随着线程数的增加，线程之间就会争夺主存，导致性能上的损失。" class="headerlink" title="3.此外，在更底层的存储器结构上也存在相似的问题，那就是线程对主存的争夺。现代大部分操作系统都实现了虚拟内存。一台机器上同时运行着很多程序，这些程序所需的存储空间可能比存储器的实际容量要大得多，但是在每个时间点，存储器只有一部分被激活。主存只需存放众多程序中的活跃部分，就像cache中只存放一个程序的活跃部分一样，而其他的部分则存储到磁盘上。由于每个线程都有自己的栈空间和私有数据结构。类似于对cache的争夺，随着线程数的增加，线程之间就会争夺主存，导致性能上的损失。"></a>3.此外，在更底层的存储器结构上也存在相似的问题，那就是线程对主存的争夺。现代大部分操作系统都实现了虚拟内存。一台机器上同时运行着很多程序，这些程序所需的存储空间可能比存储器的实际容量要大得多，但是在每个时间点，存储器只有一部分被激活。主存只需存放众多程序中的活跃部分，就像cache中只存放一个程序的活跃部分一样，而其他的部分则存储到磁盘上。由于每个线程都有自己的栈空间和私有数据结构。类似于对cache的争夺，随着线程数的增加，线程之间就会争夺主存，导致性能上的损失。</h6><h6 id="4-以上几种问题是由于线程对共享资源的争夺产生的，另外还存在一个性质不同，但是后果可能更加严重的问题，称为护航（convoying），它是指线程聚集在一起，等待获取某一个锁。当某个线程持有一个锁的时候，用完了自己的时间片，这时所有等待锁的线程都必须等待这个线程被唤醒并且释放锁。"><a href="#4-以上几种问题是由于线程对共享资源的争夺产生的，另外还存在一个性质不同，但是后果可能更加严重的问题，称为护航（convoying），它是指线程聚集在一起，等待获取某一个锁。当某个线程持有一个锁的时候，用完了自己的时间片，这时所有等待锁的线程都必须等待这个线程被唤醒并且释放锁。" class="headerlink" title="4.以上几种问题是由于线程对共享资源的争夺产生的，另外还存在一个性质不同，但是后果可能更加严重的问题，称为护航（convoying），它是指线程聚集在一起，等待获取某一个锁。当某个线程持有一个锁的时候，用完了自己的时间片，这时所有等待锁的线程都必须等待这个线程被唤醒并且释放锁。"></a>4.以上几种问题是由于线程对共享资源的争夺产生的，另外还存在一个性质不同，但是后果可能更加严重的问题，称为护航（convoying），它是指线程聚集在一起，等待获取某一个锁。当某个线程持有一个锁的时候，用完了自己的时间片，这时所有等待锁的线程都必须等待这个线程被唤醒并且释放锁。</h6><p>最好的解决方法是依据实际情况，使用尽可能少的线程，这样可以最大限度地减少操作系统资源的使用，并可提高性能。千万不要硬性规定线程的个数，而是将其作为一个可调节的参数。<br>操作系统中存在两种类型的线程，I&#x2F;O阻塞线程和计算非阻塞线程。许多应用程序，例如终端机模拟程序，都需要在同一时间处理对一个以上的文件的读写操作，我们不可能依次地等待每个请求完成才继续处理下一个请求，而是让所有这些I&#x2F;O操作并行处理，并且当任何一个I&#x2F;O完成时，应用程序会收到一个事件通告，这种处理I&#x2F;O的线程称为I&#x2F;O阻塞线程。而另外一些进程，例如进行大量计算，处理图形的线程则称为计算非阻塞线程。I&#x2F;O阻塞线程不会引起时间片切换开销，而计算非阻塞线程则会引起时间片切换的开销。所以，将I&#x2F;O阻塞线程和计算非阻塞线程分离开是一种非常好的组织方法。计算非阻塞线程在大多数时间内都是被调度函数调度到的，应该和处理器资源相匹配，而I&#x2F;O阻塞线程在大多数时间内都在等待外部事件。<br>由于构造良好的多线程应用程序要多方面地考虑资源要求和潜在冲突，需要相当的专业技术，所以一般最好采用现成的软件来完成，下面的一些经验是很有帮助的：<br>建议您尽量使用OpenMP。OpenMP提供了一种简单的方法，供程序员描述要并行的循环迭代，而不用创建具体数目的线程，OpenMP可以根据目标系统尽量使用最优数量的线程个数。<br>建议您使用线程池。每个传入的请求都将分配给线程池中的一个线程，因此可以异步处理请求，而不会占用主线程，也不会延迟后续请求的处理。一旦池中的某个线程完成任务，它将返回到等待线程队列中，等待被再次使用，这种重用使应用程序可以避免为每个线程创建新进程的开销。线程池通常具有最大线程数限制，如果所有线程都繁忙，而额外的任务将放入队列中，直到有线程可用时才能够得到处理。当您不需要给一个任务设定特定的优先级，当不会有可能会运行很长时间的任务（并因此阻塞了其他任务），我们建议您使用线程池，技术高超的软件设计专家可能希望编写自己的任务调度程序，一般都采用任务窃取（work stealing）的方法，它是指每个线程都有自己私有的任务集合，当一个线程执行完自己的任务以后，它就从其他线程的任务集合中窃取任务来执行。任务窃取实现了较好的cache利用率和负载平衡。当一个线程运行自己的任务时，它往往会重用自己cache中的数据，当它完成自己的任务，就需要窃取任务来运行，这实际上就是一种负载平衡。高效的任务策略在于窃取目标的选择，选择较大的任务能够使窃取者忙碌相当长一段时间。早期的Clik调度程序（Blumofe，1995年）就是一个关于如何编写高效的任务窃取调度程序的范例。</p>
+<p><a href="https://myprivateaccount.github.io/2017/05/31/hexo%E6%98%BE%E7%A4%BA%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/">
+  </a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2023/10/11/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91nodeJs/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2023/10/11/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91nodeJs/" itemprop="url">微信开发nodeJs</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-10-11T12:57:26+08:00">
+                2023-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BE%AE%E4%BF%A1%E5%BC%80%E5%8F%91/" itemprop="url" rel="index">
+                    <span itemprop="name">微信开发</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://segmentfault.com/a/1190000005856154">https://segmentfault.com/a/1190000005856154</a> nodejs微信开发—接入指南<br><a href="https://github.com/xiadd/shorthand">https://github.com/xiadd/shorthand</a>  微信开发群群主源码</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/31/hexo%E6%98%BE%E7%A4%BA%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/31/hexo%E6%98%BE%E7%A4%BA%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/" itemprop="url">hexo显示阅读全文</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T17:14:06+08:00">
+                2017-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo博客搭建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>最近使用Hexo搭建了自己的博客，并且使用了简洁但是强大的NexT主题。这里介绍一下NexT主题下设置在首页显示一篇文章的简介，在简介后面提供一个链接阅读全文来进入文章的详情页。效果请看 <a href="https://violinlin.github.io/">我的小窝</a></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/31/hexo%E6%98%BE%E7%A4%BA%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/31/hexo-git-backup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/31/hexo-git-backup/" itemprop="url">hexo-git-backup</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T16:02:20+08:00">
+                2017-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo博客搭建</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>git-backup</p>
+<p>git-backup.</p>
+<p>##Install if your hexo version is 2.x.x, you should install as follow:</p>
+<p>$ npm install <a href="mailto:&#104;&#101;&#x78;&#x6f;&#45;&#x67;&#105;&#116;&#x2d;&#98;&#97;&#99;&#x6b;&#x75;&#x70;&#x40;&#x30;&#x2e;&#x30;&#x2e;&#57;&#49;">&#104;&#101;&#x78;&#x6f;&#45;&#x67;&#105;&#116;&#x2d;&#98;&#97;&#99;&#x6b;&#x75;&#x70;&#x40;&#x30;&#x2e;&#x30;&#x2e;&#57;&#49;</a> –save<br>if version is 3.x.x, you should install as follow:</p>
+<p>$ npm install hexo-git-backup –save<br>Update</p>
+<p>if you install with –save, you must remove firstly when you update it.</p>
+<p>$ npm remove hexo-git-backup<br>$ npm install hexo-git-backup –save<br>Configure</p>
+<p>You should configure this plugin in _config.yml.</p>
+<p>backup:<br>    type: git<br>    repository:<br>       github: <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;</a>:xxx&#x2F;xxx.git,branchName<br>       gitcafe: <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#x6d;">&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#99;&#111;&#x6d;</a>:xxx&#x2F;xxx.git,branchName<br>Using</p>
+<p>hexo backup<br>or</p>
+<p>hexo b<br>Options</p>
+<p>if you want to back up with your theme,just add theme: your theme name,your theme name in _config.yml.</p>
+<p>backup:<br>    type: git<br>    theme: coney,landscape,xxx<br>    repository:<br>       github: <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#x68;&#x75;&#98;&#x2e;&#x63;&#x6f;&#109;</a>:xxx&#x2F;xxx.git,branchName<br>       gitcafe: <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#x74;&#x68;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a>:xxx&#x2F;xxx.git,branchName<br>Attention: if you do as above, the dir themes&#x2F;coney&#x2F;.gitwill be removed</p>
+<p>if you want DIY commit message, just add ‘message: update xxx’.</p>
+<p>backup:<br>    type: git<br>    message: update xxx<br>    repository:<br>       github: <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#103;&#105;&#x74;&#64;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>:xxx&#x2F;xxx.git,branchName<br>       gitcafe: <a href="mailto:&#x67;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#99;&#111;&#109;">&#x67;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#x62;&#46;&#99;&#111;&#109;</a>:xxx&#x2F;xxx.git,branchName<br>Now you can backup all the blog!</p>
+<p>Problems</p>
+<p>You may get some troubles by your computer’ permission。</p>
+<p>###Error: EISDIR, open it is caused by permission. just do ‘sudo hexo b’</p>
+<p>sudo hexo b</p>
+<p>转自:<a href="https://github.com/coneycode/hexo-git-backup">https://github.com/coneycode/hexo-git-backup</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/31/C%E8%AF%AD%E8%A8%80register%E5%8F%98%E9%87%8F%E5%8F%8ACPU%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/31/C%E8%AF%AD%E8%A8%80register%E5%8F%98%E9%87%8F%E5%8F%8ACPU%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/" itemprop="url">C语言register变量及CPU相关知识</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T14:42:52+08:00">
+                2017-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>一般情况下，变量的值是存储在内存中的，CPU 每次使用数据都要从内存中读取。如果有一些变量使用非常频繁，从内存中读取就会消耗很多时间，例如 for 循环中的增量控制：<br>int i;<br>for(i&#x3D;0; i&lt;1000; i++){<br>    &#x2F;&#x2F; Some Code<br>}<br>执行这段代码，CPU 为了获得 i，会读取 1000 次内存。</p>
+<p>为了解决这个问题，可以将使用频繁的变量放在CPU的通用寄存器中，这样使用该变量时就不必访问内存，直接从寄存器中读取，大大提高程序的运行效率。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/31/C%E8%AF%AD%E8%A8%80register%E5%8F%98%E9%87%8F%E5%8F%8ACPU%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/TCP%E7%9F%AD%E8%BF%9E%E6%8E%A5TIME-WAIT%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E5%A4%A7%E5%85%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/26/TCP%E7%9F%AD%E8%BF%9E%E6%8E%A5TIME-WAIT%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E5%A4%A7%E5%85%A8/" itemprop="url">TCP短连接TIME_WAIT问题解决方法大全</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T18:16:10+08:00">
+                2017-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" itemprop="url" rel="index">
+                    <span itemprop="name">网络通信</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>tcp连接是网络编程中最基础的概念，基于不同的使用场景，我们一般区分为“长连接”和“短连接”，<br>长短连接的优点和缺点这里就不详细展开了，有心的同学直接去google查询，本文主要关注如何解决tcp短连接的TIME_WAIT问题。</p>
+<p>短连接最大的优点是方便，特别是脚本语言，由于执行完毕后脚本语言的进程就结束了，基本上都是用短连接。<br>但短连接最大的缺点是将占用大量的系统资源，例如：本地端口、socket句柄。<br>导致这个问题的原因其实很简单：tcp协议层并没有长短连接的概念，因此不管长连接还是短连接，连接建立-&gt;数据传输-&gt;连接关闭的流程和处理都是一样的。</p>
+<p>正常的TCP客户端连接在关闭后，会进入一个TIME_WAIT的状态，持续的时间一般在1<del>4分钟，对于连接数不高的场景，1</del>4分钟其实并不长，对系统也不会有什么影响，<br>但如果短时间内（例如1s内）进行大量的短连接，则可能出现这样一种情况：客户端所在的操作系统的socket端口和句柄被用尽，系统无法再发起新的连接！</p>
+<p>举例来说：假设每秒建立了1000个短连接（Web场景下是很常见的，例如每个请求都去访问memcached），假设TIME_WAIT的时间是1分钟，则1分钟内需要建立6W个短连接，<br>由于TIME_WAIT时间是1分钟，这些短连接1分钟内都处于TIME_WAIT状态，都不会释放，而Linux默认的本地端口范围配置是：net.ipv4.ip_local_port_range &#x3D; 32768    61000<br>不到3W，因此这种情况下新的请求由于没有本地端口就不能建立了。</p>
+<p>可以通过如下方式来解决这个问题：<br>1）可以改为长连接，但代价较大，长连接太多会导致服务器性能问题，而且PHP等脚本语言，需要通过proxy之类的软件才能实现长连接；<br>2）修改ipv4.ip_local_port_range，增大可用端口范围，但只能缓解问题，不能根本解决问题；<br>3）客户端程序中设置socket的SO_LINGER选项；<br>4）客户端机器打开tcp_tw_recycle和tcp_timestamps选项；<br>5）客户端机器打开tcp_tw_reuse和tcp_timestamps选项；<br>6）客户端机器设置tcp_max_tw_buckets为一个很小的值；</p>
+<p>在解决php连接Memcached的短连接问题过程中，我们主要验证了3）4）5）6）几种方法，采取的是基本功能验证和代码验证，并没有进行性能压力测试验证，<br>因此实际应用的时候需要注意观察业务运行情况，发现丢包、断连、无法连接等现象时，需要关注是否是因为这些选项导致的。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/socket%E4%B9%8Bsend%E4%B8%8E%E5%8F%91%E9%80%81%E7%BC%93%E5%86%B2%E5%8C%BA%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%85%B3%E7%B3%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/26/socket%E4%B9%8Bsend%E4%B8%8E%E5%8F%91%E9%80%81%E7%BC%93%E5%86%B2%E5%8C%BA%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%85%B3%E7%B3%BB/" itemprop="url">socket之send与发送缓冲区大小的关系</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T18:11:00+08:00">
+                2017-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" itemprop="url" rel="index">
+                    <span itemprop="name">网络通信</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在C&#x2F;C++网络编程中不免会遇到需要传输大数据、大文件的情况，而由于socket本身缓冲区的限制，大概一次只能发送4K左右的数据，所以在传输大数据时客户端就需要进行分包，在目的地重新组包。而实际上已有一些消息&#x2F;通讯中间件对此进行了封装，提供了直接发送大数据&#x2F;文件的接口；除此之外，利用共享目录，ftp，ssh等系统命令来实现大文件&#x2F;数据也不失为一种好的方法。<br>基础的基于socket进行传输关键在于控制，需要自己行分包和组包。		<br>send函数在发送的数据长度大于发送缓冲区大小，或者大于发送缓冲区剩余大小时分次发送<br>当send的数据长度大于socket的缓冲区长度时，不管是windows还是linux,send都会分帧发送。</p>
+<p>具体内容见:<a href="http://www.360doc.com/content/13/0913/15/13047933_314202256.shtml">http://www.360doc.com/content/13/0913/15/13047933_314202256.shtml</a><br>           <a href="http://www.2cto.com/kf/201401/273290.html">http://www.2cto.com/kf/201401/273290.html</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/%E9%9D%9E%E9%98%BB%E5%A1%9Econnect/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/26/%E9%9D%9E%E9%98%BB%E5%A1%9Econnect/" itemprop="url">非阻塞connect</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T17:56:24+08:00">
+                2017-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" itemprop="url" rel="index">
+                    <span itemprop="name">网络通信</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在一个TCP套接口被设置为非阻塞之后调用connect,connect会立即返回EINPROGRESS错误,表示连接操作正在进行中,但是仍未完成;同时TCP的三路握手操作继续进行;在这之后,我们可以调用select来检查这个链接是否建立成功;非阻塞connect有三种用途:<br>1.我们可以在三路握手的同时做一些其它的处理.connect操作要花一个往返时间完成,而且可以是在任何地方,从几个毫秒的局域网到几百毫秒或几秒的广域网.在这段时间内我们可能有一些其他的处理想要执行;<br>2.可以用这种技术同时建立多个连接.在Web浏览器中很普遍;<br>3.由于我们使用select来等待连接的完成,因此我们可以给select设置一个时间限制,从而缩短connect的超时时间.在大多数实现中,connect的超时时间在75秒到几分钟之间.有时候应用程序想要一个更短的超时时间,使用非阻塞connect就是一种方法;<br>非阻塞connect听起来虽然简单,但是仍然有一些细节问题要处理:<br>1.即使套接口是非阻塞的,如果连接的服务器在同一台主机上,那么在调用connect建立连接时,连接通常会立即建立成功.我们必须处理这种情况;<br>2.源自Berkeley的实现(和Posix.1g)有两条与select和非阻塞IO相关的规则:<br>  A:当连接建立成功时,套接口描述符变成可写;<br>  B:当连接出错时,套接口描述符变成既可读又可写;<br>  注意:当一个套接口出错时,它会被select调用标记为既可读又可写;</p>
+<p>非阻塞connect有这么多好处,但是处理非阻塞connect时会遇到很多可移植性问题;</p>
+<p>处理非阻塞connect的步骤:<br>第一步:创建socket,返回套接口描述符;<br>第二步:调用fcntl把套接口描述符设置成非阻塞;<br>第三步:调用connect开始建立连接;<br>第四步:判断连接是否成功建立;<br>       A:如果connect返回0,表示连接简称成功(服务器可客户端在同一台机器上时就有可能发生这种情况);<br>       B:调用select来等待连接建立成功完成;<br>         如果select返回0,则表示建立连接超时;我们返回超时错误给用户,同时关闭连接,以防止三路握手操作继续进行下去;<br>         如果select返回大于0的值,则需要检查套接口描述符是否可读或可写;如果套接口描述符可读或可写,则我们可以通过调用getsockopt来得到套接口上待处理的错误(SO_ERROR),如果连接建立成功,这个错误值将是0,如果建立连接时遇到错误,则这个值是连接错误所对应的errno值(比如:ECONNREFUSED,ETIMEDOUT等).<br>“读取套接口上的错误”是遇到的第一个可移植性问题;如果出现问题,getsockopt源自Berkeley的实现是返回0,等待处理的错误在变量errno中返回;但是Solaris会让getsockopt返回-1,errno置为待处理的错误;我们对这两种情况都要处理;</p>
+<p>这样,在处理非阻塞connect时,在不同的套接口实现的平台中存在的移植性问题,首先,有可能在调用select之前,连接就已经建立成功,而且对方的数据已经到来.在这种情况下,连接成功时套接口将既可读又可写.这和连接失败时是一样的.这个时候我们还得通过getsockopt来读取错误值;这是第二个可移植性问题;<br>移植性问题总结:<br>1.对于出错的套接口描述符,getsockopt的返回值源自Berkeley的实现是返回0,待处理的错误值存储在errno中;而源自Solaris的实现是返回0,待处理的错误存储在errno中;(套接口描述符出错时调用getsockopt的返回值不可移植)<br>2.有可能在调用select之前,连接就已经建立成功,而且对方的数据已经到来,在这种情况下,套接口描述符是既可读又可写;这与套接口描述符出错时是一样的;(怎样判断连接是否建立成功的条件不可移植)</p>
+<p>这样的话,在我们判断连接是否建立成功的条件不唯一时,我们可以有以下的方法来解决这个问题:<br>1.调用getpeername代替getsockopt.如果调用getpeername失败,getpeername返回ENOTCONN,表示连接建立失败,我们必须以SO_ERROR调用getsockopt得到套接口描述符上的待处理错误;<br>2.调用read,读取长度为0字节的数据.如果read调用失败,则表示连接建立失败,而且read返回的errno指明了连接失败的原因.如果连接建立成功,read应该返回0;<br>3.再调用一次connect.它应该失败,如果错误errno是EISCONN,就表示套接口已经建立,而且第一次连接是成功的;否则,连接就是失败的;</p>
+<p>被中断的connect:<br>如果在一个阻塞式套接口上调用connect,在TCP的三路握手操作完成之前被中断了,比如说,被捕获的信号中断,将会发生什么呢?假定connect不会自动重启,它将返回EINTR.那么,这个时候,我们就不能再调用connect等待连接建立完成了,如果再次调用connect来等待连接建立完成的话,connect将会返回错误值EADDRINUSE.在这种情况下,应该做的是调用select,就像在非阻塞式connect中所做的一样.然后,select在连接建立成功(使套接口描述符可写)或连接建立失败(使套接口描述符既可读又可写)时返回;</p>
+<p>转自：<a href="http://bdxnote.blog.163.com/blog/static/844423520098651256549/">http://bdxnote.blog.163.com/blog/static/844423520098651256549/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/26/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="江山小楼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/26/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" itemprop="url">网络通信常见问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-26T17:44:05+08:00">
+                2017-05-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/" itemprop="url" rel="index">
+                    <span itemprop="name">网络通信</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="一、socket流程"><a href="#一、socket流程" class="headerlink" title="一、socket流程"></a>一、socket流程</h2><p>socket 是面向客户&#x2F;服务器模型而设计的，</p>
+<p>针对客户和服务器程序提供不同的socket 系统调用</p>
+<h2 id="二、长连接和短连接"><a href="#二、长连接和短连接" class="headerlink" title="二、长连接和短连接"></a>二、长连接和短连接</h2><p>长连接：在多次请求中保持连接，使用同一个连接处理多次请求，直至出现错误或者异常才断开，并重新建立新的连接。<br>一般通过服务器端的长时间的读超时和客户端重用连接来实现。<br>典型例子：ui-&gt;as  as-&gt;bs<br>短连接：每个请求建立一个连接，请求处理完成，则断开连接。<br>一般服务器端使用短的读超时。<br>典型例子：browser-&gt;apache  client-&gt;LDC<br>ependingpoll同时支持长连接和短链接 </p>
+<h2 id="三、常见问题"><a href="#三、常见问题" class="headerlink" title="三、常见问题"></a>三、常见问题</h2><h3 id="1-socket不够"><a href="#1-socket不够" class="headerlink" title="1.socket不够"></a>1.socket不够</h3><p>大压力短连接，出现大量close_wait<br>解决方法：<br>lg.l_onoff &#x3D; 1;<br>lg.l_linger &#x3D; 0;<br>setsockopt(svrsock-&gt;sock, SOL_SOCKET, SO_LINGER,  (const char*)&amp;lg, sizeof(lg));</p>
+<h3 id="2-长连接请求混乱"><a href="#2-长连接请求混乱" class="headerlink" title="2.长连接请求混乱"></a>2.长连接请求混乱</h3><p>长连接请求错乱，收到其他线程的请求<br>导致原因：在长连接出错的情况下，并没有关闭连接 </p>
+<h3 id="3-SIGPIPE信号"><a href="#3-SIGPIPE信号" class="headerlink" title="3.SIGPIPE信号"></a>3.SIGPIPE信号</h3><p>向断开（半关闭）的连接中write数据时产生<br>通常处理方式：<br>signal(SIGPIPE, SIG_IGN);<br>SIGPIPE信号被忽略 </p>
+<h3 id="4-TCP-NODELAY"><a href="#4-TCP-NODELAY" class="headerlink" title="4.TCP_NODELAY"></a>4.TCP_NODELAY</h3><p>TCP_NODELAY 不使用Nagle算法，不会将小包进行拼接成大包再进行发送，直接将小包发送出去，会使得小包时候用户体验非常好。<br>如果没有TCP_NODELAY在压力的情况下，会有延时（40ms）<br>Ependingpool自己默认的accept函数没有将socket设置成TCP_NODELAY.需要自己写回调函数来控制。<br>加入如下语句<br>client &#x3D; ul_accept(sock, (struct sockaddr *)&amp;sin, &amp;slen);<br>       if (client &gt; 0)<br>               setsockopt(client, IPPROTO_TCP, TCP_NODELAY, &amp;on, sizeof(on));       </p>
+<h3 id="5-SO-REUSEADDR"><a href="#5-SO-REUSEADDR" class="headerlink" title="5.SO_REUSEADDR"></a>5.SO_REUSEADDR</h3><p>通常用于服务监听套接字，支持服务快速重启<br>如：<br>&#x2F;&#x2F; 地址复用<br>int on &#x3D; 1;<br>setsockopt(listen_sd, SOL_SOCKET, SO_REUSEADDR, &amp;on, sizeof(on));      </p>
+<h3 id="6-一次读写不完全"><a href="#6-一次读写不完全" class="headerlink" title="6.一次读写不完全"></a>6.一次读写不完全</h3><p>正常情况下，read和write可能读写比指定数量少的数据<br>原因可能是：<br>内核缓冲区满<br>被信号中断<br>解决方法：<br>反复调用直到数据被全部读（写）完（注意死循环） </p>
+<h3 id="7-网络字节序转换"><a href="#7-网络字节序转换" class="headerlink" title="7.网络字节序转换"></a>7.网络字节序转换</h3><p>big-endian和little-endian<br>相关函数：<br>htonl、htons、ntohl、ntohs<br>保证程序兼容性和可移植性 </p>
+<h3 id="8-select中的bug"><a href="#8-select中的bug" class="headerlink" title="8.select中的bug"></a>8.select中的bug</h3><p>不能操作多于1024个的socket<br>FD_SETSIZE在内核中定义为1024，并使用其声明最大的描述字集大小<br>解决方法：<br>调整程序，使其所需socket少于1024<br>使用poll()来代替select() </p>
+<h3 id="9-带超时的select"><a href="#9-带超时的select" class="headerlink" title="9.带超时的select"></a>9.带超时的select</h3><p>将要读的套接字加入rset中<br>调用select()。如果返回0则超时，返回-1则出错，否则利用FD_ISSET宏检查rset中的该套接字是否置位，如果是，则该套接字有数据可读，调用read()来读取<br>写超时控制和读超时控制的操作类似，但设置的是wret </p>
+<h3 id="10-带超时的Connect"><a href="#10-带超时的Connect" class="headerlink" title="10.带超时的Connect"></a>10.带超时的Connect</h3><p>设置套接字为非阻塞：<br>flags&#x3D;fcntl(sockfd,F_GETFL,0);<br>fcntl(sockfd,F_SETFL,flags|O_NONBLOCK);<br>调用connect()。如果返回成功则连接已经建立。不成功则检查errno，如果errno为EINPROGRESS，表示连接正在试图建立中。其他错误则应返回出错。<br>将套接字加入rset和wset，调用select()。返回0则表示超时。<br>如果select()返回成功，则检查sockfd的状态，仅可写则为连接建立成功，可读且可写表示出错。<br>恢复套接字的原有状态：<br>fcntl(sockfd,F_SETFL,flags);<br>11.调用被信号中断<br>大多数的阻塞系统调用都可能被信号中断<br>read()、write()、accept()、select()、connect()……<br>恢复被中断的系统调用<br>设置信号标志为SA_RESTART（并不是所有系统都支持；并不是所有系统调用都支持）<br>判断errno为EINTR，则再次调用函数（推荐）<br>read()、write()、select()、accept()可以重新调用一次：<br>do {<br>     result &#x3D; read(sockfd,buf,len);<br>}while ((result &#x3D;&#x3D; -1) &amp;&amp; (errno &#x3D;&#x3D; EINTR));<br>connect()被中断不能重新调用，只能使用select()来等待连接完成。</p>
+<p>转自：<a href="http://blog.csdn.net/wzhwho/article/details/6169620">http://blog.csdn.net/wzhwho/article/details/6169620</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&gt;</a>
+  </nav>
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank" title="Others">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Others
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.google.com/" title="谷歌" target="_blank">谷歌</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://baidu.com/" title="百度" target="_blank">百度</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">开心的萝卜</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+  <!-- 背景动画 -->
+  <script type="text/javascript" src="/js/src/particle.js"></script>
+  <!-- 页面点击小红心 -->
+  <!-- <script type="text/javascript" src="/js/src/love.js"></script> -->
+
+</body>
+</html>
